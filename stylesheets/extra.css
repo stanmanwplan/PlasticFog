@@ -1,0 +1,26 @@
+/* Sidebar: tint the top-level section labels with the theme's primary colour.
+ *
+ * `.md-nav__item--section` is set by the `navigation.sections` feature and, in
+ * the built HTML, appears only on level-0 items of the primary navigation. The
+ * direct-child combinator keeps the rule on the section's own <label> and off
+ * the ordinary page links nested inside it; the active-item treatment lives on
+ * `.md-nav__link--active`, which a section label never carries.
+ */
+:root {
+  --pf-nav-section-color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] {
+  --pf-nav-section-color: var(--md-primary-fg-color--light);
+}
+
+.md-nav--primary .md-nav__item--section > .md-nav__link {
+  color: var(--pf-nav-section-color);
+  font-weight: 700;
+}
+
+/* No logo mark in the header or the mobile drawer */
+.md-header__button.md-logo,
+.md-nav__button.md-logo {
+  display: none;
+}

@@ -1,0 +1,4911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A distributed framework for nested, mixed-paradigm decomposition optimization">
+      
+      
+      
+        <link rel="canonical" href="https://stanmanwplan.github.io/PlasticFog/quality/tests/">
+      
+      
+        <link rel="prev" href="harness/">
+      
+      
+        <link rel="next" href="unit/benderscuts/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Test index - PlasticFog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#test-index" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PlasticFog" class="md-header__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlasticFog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Test index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PlasticFog" class="md-nav__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    PlasticFog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workbench reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/problem-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/zimpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zimpl reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/llm-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authoring with an LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/app-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services & control plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/state-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decomposition paradigms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speculative Farming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Speculative Farming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/using/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using speculative farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/column-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Column generation & pricing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/first-order-lp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First-order LP & inexactness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/proof-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof debt & certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/k-exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K-exchange farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitive analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approaches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Approaches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/plasmo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plasmo.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/coluna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coluna.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/sddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDDP.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/scenario-decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario decomposition frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/gpu-first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU-first solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/monolithic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monolithic solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/problem-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & files
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & files
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Files & artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality & Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quality & Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy & methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test harness & fixtures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test index
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-to-end-lanes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end lanes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-the-counts-add-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making the counts add up
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unit tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/benderscuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersCuts_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/bendersmaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersMaster_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/blockplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BlockPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Catalog_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/columnverifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ColumnVerifier_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Commands_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/conductor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/conductor-logrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_LogRouter_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/conductor-runscheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_RunScheduler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/conductor-supervisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Supervisor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/deepcheck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_DeepCheck_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/enginecuopt-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineCuOpt_Loader_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/enginehighs-mathgate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_MathGate_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/enginehighs-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_Parity_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/failurepolicy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_FailurePolicy_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Graph_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/midpricing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MidPricing_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/monolithassembler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MonolithAssembler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/mps2english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Mps2English_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/probleminput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/probleminput-adversarial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Adversarial_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/refusalinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/refusalinventory-engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Engines_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/refusalinventory-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Workbench_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/replytable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ReplyTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/resourcedrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceDrive_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/resourceenvelope-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceEnvelope_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/responsetable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResponseTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/results-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Results_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/serviceidmanager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServiceIdManager_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/servicesrepo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/servicesrepo-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Schema_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/solverengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverEngine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/solverstatemachine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverStateMachine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/speculationprng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SpeculationPrng_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/stagingplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_StagingPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/verbattachment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_VerbAttachment_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/zimplcompiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplCompiler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/zimplregistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplRegistry_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unit/zimplstaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplStaging_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    End-to-end tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    End-to-end tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/d1-engines-pfe006-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1 — engines, pfe006-debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/e1-engines-all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 — engines, all
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/f1-engines-pfe006-farm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1 — engines, pfe006-farm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/i1-inline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I1 — inline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/k1-engines-pfe006-k1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K1 — engines, pfe006-k1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l1-scenario-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 — pf001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l2-scenario-pf002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 — pf002
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l3-generalized/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 — generalized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l4-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 — reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l5-scenario-pf002-degrade-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 — pf002, degrade sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l6-scenario-pf002-omit-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 — pf002, omit sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l7-nested/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L7 — nested
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/l8-resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L8 — resource
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/s1-engines-pfe006-sampled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S1 — engines, pfe006-sampled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v1-nested-command-variant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V1 — nested, command variant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v2-nested-update-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V2 — nested, update lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v3-resource-degrade-robot-b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V3 — resource, degrade robot_b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v4-nested-mixed-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V4 — nested, mixed lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v5-nested-mixed-degrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V5 — nested mixed, degrade robot_r1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v6-nested-degrade-substitute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V6 — nested, degrade C1 substitute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v7-nested-degrade-abort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V7 — nested, degrade C1 abort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/v8-nested-scopes-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V8 — nested, scopes lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w1-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W1 — workbench
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w2-workbench-spawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W2 — workbench, wb-spawn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w3-workbench-discover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W3 — workbench, wb-discover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w4-workbench-auto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W4 — workbench, wb-auto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w5-workbench-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W5 — workbench, wb-repeat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w6-workbench-continuous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W6 — workbench, wb-continuous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w7-workbench-results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W7 — workbench, wb-results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/w8-workbench-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W8 — workbench, wb-logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/x1-engines-pfe006-escalate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X1 — engines, pfe006-escalate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="e2e/z1-zimpl-cli-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Z1 — pf001 under the Zimpl CLI backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roadmap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upcoming features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-to-end-lanes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end lanes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-the-counts-add-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making the counts add up
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="test-index">Test index<a class="headerlink" href="#test-index" title="Permanent link">&para;</a></h1>
+<!-- dc:status=polished dc:owner=DC4a -->
+
+<p>Every test in the suite has a page. This one lists them: forty unit tests in the
+first table, thirty-two end-to-end lanes in the second, with the CTest name and
+labels where they exist and a one-line statement of what each covers.</p>
+<p>The counts and the arithmetic that connects them are reconciled at the foot of
+the page, because two of the columns below do not add up to the same number and
+the reason is worth knowing.</p>
+<h2 id="unit-tests">Unit tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Source</th>
+<th>CTest name</th>
+<th>Labels</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="unit/benderscuts/">pf_BendersCuts_Tests</a></td>
+<td><code>tests/unit/pf_BendersCuts_Tests.cpp</code></td>
+<td><code>pf_BendersCuts</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The Benders cut objects and the arithmetic that builds them.</td>
+</tr>
+<tr>
+<td><a href="unit/bendersmaster/">pf_BendersMaster_Tests</a></td>
+<td><code>tests/unit/pf_BendersMaster_Tests.cpp</code></td>
+<td><code>pf_BendersMaster</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The Benders loop itself: master and children in one process, through the same entry points the services use.</td>
+</tr>
+<tr>
+<td><a href="unit/blockplan/">pf_BlockPlan_Tests</a></td>
+<td><code>tests/unit/pf_BlockPlan_Tests.cpp</code></td>
+<td><code>pf_BlockPlan</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The block plan that partitions a compiled master model into per-child blocks.</td>
+</tr>
+<tr>
+<td><a href="unit/catalog/">pf_Catalog_Tests</a></td>
+<td><code>tests/unit/pf_Catalog_Tests.cpp</code></td>
+<td><code>pf_Catalog</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The append-only revision store: immutability, hash determinism, exact round trip, ranked search.</td>
+</tr>
+<tr>
+<td><a href="unit/columnverifier/">pf_ColumnVerifier_Tests</a></td>
+<td><code>tests/unit/pf_ColumnVerifier_Tests.cpp</code></td>
+<td><code>pf_ColumnVerifier</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The pure arithmetic that decides whether a proposed column may be admitted.</td>
+</tr>
+<tr>
+<td><a href="unit/commands/">pf_Commands_Tests</a></td>
+<td><code>tests/unit/pf_Commands_Tests.cpp</code></td>
+<td><code>pf_Commands</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The DDS command collection: ownership, deep copy, and publication.</td>
+</tr>
+<tr>
+<td><a href="unit/conductor/">pf_Conductor_Tests</a></td>
+<td><code>tests/unit/pf_Conductor_Tests.cpp</code></td>
+<td><code>pf_Conductor</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The resident daemon: its verbs, its run registry, and the ingestion of a run’s results document.</td>
+</tr>
+<tr>
+<td><a href="unit/conductor-logrouter/">pf_Conductor_LogRouter_Tests</a></td>
+<td><code>tests/unit/pf_Conductor_LogRouter_Tests.cpp</code></td>
+<td><code>pf_Conductor_LogRouter</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The log router: labelling, level filtering, and its silent default.</td>
+</tr>
+<tr>
+<td><a href="unit/conductor-runscheduler/">pf_Conductor_RunScheduler_Tests</a></td>
+<td><code>tests/unit/pf_Conductor_RunScheduler_Tests.cpp</code></td>
+<td><code>pf_Conductor_RunScheduler</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The run scheduler as a pure decision engine: modes, overlap, stop conditions, warm start.</td>
+</tr>
+<tr>
+<td><a href="unit/conductor-supervisor/">pf_Conductor_Supervisor_Tests</a></td>
+<td><code>tests/unit/pf_Conductor_Supervisor_Tests.cpp</code></td>
+<td><code>pf_Conductor_Supervisor</code>, <code>pf_Conductor_Supervisor_Probe</code></td>
+<td><code>unit;integration;public</code></td>
+<td>The deployment supervisor: start order, process identity, drain, census. Registered twice, once per half.</td>
+</tr>
+<tr>
+<td><a href="unit/deepcheck/">pf_DeepCheck_Tests</a></td>
+<td><code>tests/unit/pf_DeepCheck_Tests.cpp</code></td>
+<td><code>pf_DeepCheck</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The compile-diagnostic classifier, plus the guard that holds the coverage table and its tracked copy together.</td>
+</tr>
+<tr>
+<td><a href="unit/enginecuopt-loader/">pf_EngineCuOpt_Loader_Tests</a></td>
+<td><code>tests/unit/pf_EngineCuOpt_Loader_Tests.cpp</code></td>
+<td><code>pf_EngineCuOpt_Loader</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The GPU adapter’s loading decision, pinned against stub libraries rather than a device.</td>
+</tr>
+<tr>
+<td><a href="unit/enginehighs-mathgate/">pf_EngineHighs_MathGate_Tests</a></td>
+<td><code>tests/unit/pf_EngineHighs_MathGate_Tests.cpp</code></td>
+<td><code>pf_EngineHighs_MathGate</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The orientation of the duals and rays a newly seamed engine returns.</td>
+</tr>
+<tr>
+<td><a href="unit/enginehighs-parity/">pf_EngineHighs_Parity_Tests</a></td>
+<td><code>tests/unit/pf_EngineHighs_Parity_Tests.cpp</code></td>
+<td><code>pf_EngineHighs_Parity</code></td>
+<td><code>unit;fast;public</code></td>
+<td>That engine against the others on the same models.</td>
+</tr>
+<tr>
+<td><a href="unit/failurepolicy/">pf_FailurePolicy_Tests</a></td>
+<td><code>tests/unit/pf_FailurePolicy_Tests.cpp</code></td>
+<td><code>pf_FailurePolicy</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Missing-subproblem policy resolution, including its precedence chain.</td>
+</tr>
+<tr>
+<td><a href="unit/graph/">pf_Graph_Tests</a></td>
+<td><code>tests/unit/pf_Graph_Tests.cpp</code></td>
+<td><code>pf_Graph</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The problem graph and its map: modules, identifiers and serialization.</td>
+</tr>
+<tr>
+<td><a href="unit/midpricing/">pf_MidPricing_Tests</a></td>
+<td><code>tests/unit/pf_MidPricing_Tests.cpp</code></td>
+<td><code>pf_MidPricing</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The column a mid returns to its parent, checked against a fixture rather than left to a runtime signal that does not exist.</td>
+</tr>
+<tr>
+<td><a href="unit/monolithassembler/">pf_MonolithAssembler_Tests</a></td>
+<td><code>tests/unit/pf_MonolithAssembler_Tests.cpp</code></td>
+<td><code>pf_MonolithAssembler</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Assembly of the independent monolith oracle, rule by rule.</td>
+</tr>
+<tr>
+<td><a href="unit/mps2english/">pf_Mps2English_Tests</a></td>
+<td><code>tests/unit/pf_Mps2English_Tests.cpp</code></td>
+<td><code>pf_Mps2English</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Readable rendering of a solved model, as a characterisation test over harvested goldens.</td>
+</tr>
+<tr>
+<td><a href="unit/probleminput/">pf_ProblemInput_Tests</a></td>
+<td><code>pf_ProblemInput_Tests.cpp</code></td>
+<td><code>pf_problem_input</code></td>
+<td><em>(none)</em></td>
+<td>The problem-definition codec: parsing, semantic validation, canonical form and round trip.</td>
+</tr>
+<tr>
+<td><a href="unit/probleminput-adversarial/">pf_ProblemInput_Adversarial_Tests</a></td>
+<td><code>pf_ProblemInput_Adversarial_Tests.cpp</code></td>
+<td><code>pf_problem_input_adversarial</code></td>
+<td><em>(none)</em></td>
+<td>Malformed and hostile documents against the same codec, each refusal pinned by code and pointer.</td>
+</tr>
+<tr>
+<td><a href="unit/refusalinventory/">pf_RefusalInventory_Tests</a></td>
+<td><code>tests/unit/pf_RefusalInventory_Tests.cpp</code></td>
+<td><code>pf_RefusalInventory</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The refusal inventory: every capability this build refuses, by name.</td>
+</tr>
+<tr>
+<td><a href="unit/refusalinventory-engines/">pf_RefusalInventory_Engines_Tests</a></td>
+<td><code>tests/unit/pf_RefusalInventory_Engines_Tests.cpp</code></td>
+<td><code>pf_RefusalInventory_Engines</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The engine-related half of that inventory.</td>
+</tr>
+<tr>
+<td><a href="unit/refusalinventory-workbench/">pf_RefusalInventory_Workbench_Tests</a></td>
+<td><code>tests/unit/pf_RefusalInventory_Workbench_Tests.cpp</code></td>
+<td><code>pf_RefusalInventory_Workbench</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The workbench-related half of that inventory.</td>
+</tr>
+<tr>
+<td><a href="unit/replytable/">pf_ReplyTable_Tests</a></td>
+<td><code>tests/unit/pf_ReplyTable_Tests.cpp</code></td>
+<td><code>pf_ReplyTable</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Whether an arriving subproblem reply belongs to an outstanding request, and which block it routes to.</td>
+</tr>
+<tr>
+<td><a href="unit/resourcedrive/">pf_ResourceDrive_Tests</a></td>
+<td><code>tests/unit/pf_ResourceDrive_Tests.cpp</code></td>
+<td><code>pf_ResourceDrive</code></td>
+<td><code>unit;fast;public</code></td>
+<td>How a module’s attributes become resource-directed boundaries, and how their names resolve.</td>
+</tr>
+<tr>
+<td><a href="unit/resourceenvelope-types/">pf_ResourceEnvelope_Types_Tests</a></td>
+<td><code>tests/unit/pf_ResourceEnvelope_Types_Tests.cpp</code></td>
+<td><code>pf_resource_envelope_types</code></td>
+<td><em>(none)</em></td>
+<td>The resource envelope types and their serialization.</td>
+</tr>
+<tr>
+<td><a href="unit/responsetable/">pf_ResponseTable_Tests</a></td>
+<td><code>tests/unit/pf_ResponseTable_Tests.cpp</code></td>
+<td><code>pf_ResponseTable</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The resource-directed counterpart to the reply table, concentrating on the rejection paths.</td>
+</tr>
+<tr>
+<td><a href="unit/results-types/">pf_Results_Types_Tests</a></td>
+<td><code>pf_Results_Types_Tests.cpp</code></td>
+<td><code>pf_results_types</code></td>
+<td><em>(none)</em></td>
+<td>The results envelope: round trip, malformed input, and the provenance arrays.</td>
+</tr>
+<tr>
+<td><a href="unit/serviceidmanager/">pf_ServiceIdManager_Tests</a></td>
+<td><code>tests/unit/pf_ServiceIdManager_Tests.cpp</code></td>
+<td><code>pf_ServiceIdManager</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Reading and assigning service identifiers.</td>
+</tr>
+<tr>
+<td><a href="unit/servicesrepo/">pf_ServicesRepo_Tests</a></td>
+<td><code>tests/unit/pf_ServicesRepo_Tests.cpp</code></td>
+<td><code>pf_ServicesRepo</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The services repository: registration, retrieval and structured query.</td>
+</tr>
+<tr>
+<td><a href="unit/servicesrepo-schema/">pf_ServicesRepo_Schema_Tests</a></td>
+<td><code>tests/unit/pf_ServicesRepo_Schema_Tests.cpp</code></td>
+<td><code>pf_regdb_schema</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The registry database schema and its frozen rows.</td>
+</tr>
+<tr>
+<td><a href="unit/solverengine/">pf_SolverEngine_Tests</a></td>
+<td><code>tests/unit/pf_SolverEngine_Tests.cpp</code></td>
+<td><code>pf_SolverEngine</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The engine seam: selection, capability facts, and what each engine may be asked for.</td>
+</tr>
+<tr>
+<td><a href="unit/solverstatemachine/">pf_SolverStateMachine_Tests</a></td>
+<td><code>tests/unit/pf_SolverStateMachine_Tests.cpp</code></td>
+<td><code>pf_SolverStateMachine</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Both solver state machines, against the tracked transition table.</td>
+</tr>
+<tr>
+<td><a href="unit/speculationprng/">pf_SpeculationPrng_Tests</a></td>
+<td><code>tests/unit/pf_SpeculationPrng_Tests.cpp</code></td>
+<td><code>pf_SpeculationPrng</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The two deterministic draw streams speculative farming uses.</td>
+</tr>
+<tr>
+<td><a href="unit/stagingplan/">pf_StagingPlan_Tests</a></td>
+<td><code>tests/unit/pf_StagingPlan_Tests.cpp</code></td>
+<td><code>pf_StagingPlan</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The staging plan: which compile unit each service receives.</td>
+</tr>
+<tr>
+<td><a href="unit/verbattachment/">pf_VerbAttachment_Tests</a></td>
+<td><code>tests/unit/pf_VerbAttachment_Tests.cpp</code></td>
+<td><code>pf_VerbAttachment</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Which commands attach to which module, by role.</td>
+</tr>
+<tr>
+<td><a href="unit/zimplcompiler/">pf_ZimplCompiler_Tests</a></td>
+<td><code>tests/unit/pf_ZimplCompiler_Tests.cpp</code></td>
+<td><code>pf_ZimplCompiler</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The Zimpl compiler seam.</td>
+</tr>
+<tr>
+<td><a href="unit/zimplregistry/">pf_ZimplRegistry_Tests</a></td>
+<td><code>tests/unit/pf_ZimplRegistry_Tests.cpp</code></td>
+<td><code>pf_ZimplRegistry</code></td>
+<td><code>unit;fast;public</code></td>
+<td>The source registry and the artifact cache: ingestion, pinning, eviction, single-flight compilation.</td>
+</tr>
+<tr>
+<td><a href="unit/zimplstaging/">pf_ZimplStaging_Tests</a></td>
+<td><code>tests/unit/pf_ZimplStaging_Tests.cpp</code></td>
+<td><code>pf_ZimplStaging</code></td>
+<td><code>unit;fast;public</code></td>
+<td>Staging of model sources into the units that are compiled.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="end-to-end-lanes">End-to-end lanes<a class="headerlink" href="#end-to-end-lanes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Lane</th>
+<th>Invocation</th>
+<th>CTest name</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="e2e/l1-scenario-pf001/">l1-scenario-pf001</a></td>
+<td><code>L1</code></td>
+<td><code>tests/e2e/run_scenario.sh --scenario pf001</code></td>
+<td><code>pf_e2e_pf001</code></td>
+<td>The legacy demo path on the separable baseline scenario.</td>
+</tr>
+<tr>
+<td><a href="e2e/l2-scenario-pf002/">l2-scenario-pf002</a></td>
+<td><code>L2</code></td>
+<td><code>tests/e2e/run_scenario.sh --scenario pf002</code></td>
+<td><code>pf_e2e_pf002</code></td>
+<td>The legacy demo path on the contended scenario — the value only real distributed coordination reaches.</td>
+</tr>
+<tr>
+<td><a href="e2e/l3-generalized/">l3-generalized</a></td>
+<td><code>L3</code></td>
+<td><code>tests/e2e/run_generalized.sh</code></td>
+<td>—</td>
+<td>The generalized path: a problem definition projected, submitted, and answered over the wire.</td>
+</tr>
+<tr>
+<td><a href="e2e/l4-reuse/">l4-reuse</a></td>
+<td><code>L4</code></td>
+<td><code>tests/e2e/run_reuse.sh</code></td>
+<td>—</td>
+<td>Durable reuse: one constellation, two campaigns, a published graph reused.</td>
+</tr>
+<tr>
+<td><a href="e2e/l5-scenario-pf002-degrade-sub2/">l5-scenario-pf002-degrade-sub2</a></td>
+<td><code>L5</code></td>
+<td><code>tests/e2e/run_scenario.sh --scenario pf002 --degrade sub2 --degrade-mode pre-solve</code></td>
+<td>—</td>
+<td>A subproblem killed after its first real reply — degradation recorded rather than absorbed.</td>
+</tr>
+<tr>
+<td><a href="e2e/l6-scenario-pf002-omit-sub2/">l6-scenario-pf002-omit-sub2</a></td>
+<td><code>L6</code></td>
+<td><code>tests/e2e/run_scenario.sh --scenario pf002 --omit sub2 --mode unavailable</code></td>
+<td>—</td>
+<td>A subproblem never launched — the services-unavailable fast fail, asserted as a process exit.</td>
+</tr>
+<tr>
+<td><a href="e2e/l7-nested/">l7-nested</a></td>
+<td><code>L7</code></td>
+<td><code>tests/e2e/run_nested.sh</code></td>
+<td>—</td>
+<td>The nested topology: one node that is a subproblem to its parent and a master to its own children.</td>
+</tr>
+<tr>
+<td><a href="e2e/l8-resource/">l8-resource</a></td>
+<td><code>L8</code></td>
+<td><code>tests/e2e/run_resource.sh</code></td>
+<td>—</td>
+<td>Resource-directed decomposition, flat.</td>
+</tr>
+<tr>
+<td><a href="e2e/v1-nested-command-variant/">v1-nested-command-variant</a></td>
+<td><code>V1</code></td>
+<td><code>tests/e2e/run_nested.sh --command-variant 1</code></td>
+<td>—</td>
+<td>The nested topology driven through control-plane commands.</td>
+</tr>
+<tr>
+<td><a href="e2e/v2-nested-update-lane/">v2-nested-update-lane</a></td>
+<td><code>V2</code></td>
+<td><code>tests/e2e/run_nested.sh --update-lane</code></td>
+<td>—</td>
+<td>A spot update applied against a running system.</td>
+</tr>
+<tr>
+<td><a href="e2e/v3-resource-degrade-robot-b/">v3-resource-degrade-robot-b</a></td>
+<td><code>V3</code></td>
+<td><code>tests/e2e/run_resource.sh --degrade robot_b</code></td>
+<td>—</td>
+<td>The resource lane with a child degraded — the failure that must be loud.</td>
+</tr>
+<tr>
+<td><a href="e2e/v4-nested-mixed-lane/">v4-nested-mixed-lane</a></td>
+<td><code>V4</code></td>
+<td><code>tests/e2e/run_nested.sh --mixed-lane</code></td>
+<td>—</td>
+<td>Mixed composition: a price-directed root over a resource-directed mid.</td>
+</tr>
+<tr>
+<td><a href="e2e/v5-nested-mixed-degrade/">v5-nested-mixed-degrade</a></td>
+<td><code>V5</code></td>
+<td><code>tests/e2e/run_nested.sh --mixed-lane --mixed-degrade robot_r1</code></td>
+<td>—</td>
+<td>The mixed shape with a resource child degraded, so the composed failure chain resolves.</td>
+</tr>
+<tr>
+<td><a href="e2e/v6-nested-degrade-substitute/">v6-nested-degrade-substitute</a></td>
+<td><code>V6</code></td>
+<td><code>tests/e2e/run_nested.sh --degrade C1 --degrade-mode pre-solve --degrade-policy substitute</code></td>
+<td>—</td>
+<td>A failure beneath the mid, resolved by the substitute policy.</td>
+</tr>
+<tr>
+<td><a href="e2e/v7-nested-degrade-abort/">v7-nested-degrade-abort</a></td>
+<td><code>V7</code></td>
+<td><code>tests/e2e/run_nested.sh --degrade C1 --degrade-mode pre-solve --degrade-policy abort</code></td>
+<td>—</td>
+<td>The same failure under the abort policy — aborted at both levels.</td>
+</tr>
+<tr>
+<td><a href="e2e/v8-nested-scopes-lane/">v8-nested-scopes-lane</a></td>
+<td><code>V8</code></td>
+<td><code>tests/e2e/run_nested.sh --scopes-lane</code></td>
+<td>—</td>
+<td>Per-master results return: a named node reports its own scope.</td>
+</tr>
+<tr>
+<td><a href="e2e/w1-workbench/">w1-workbench</a></td>
+<td><code>W1</code></td>
+<td><code>tests/e2e/run_workbench.sh</code></td>
+<td>—</td>
+<td>The front end end to end: submit through the conductor and get an answer back.</td>
+</tr>
+<tr>
+<td><a href="e2e/w2-workbench-spawn/">w2-workbench-spawn</a></td>
+<td><code>W2</code></td>
+<td><code>tests/e2e/run_workbench.sh --scenario wb-spawn</code></td>
+<td>—</td>
+<td>A submission whose placements ask for processes to be started.</td>
+</tr>
+<tr>
+<td><a href="e2e/w3-workbench-discover/">w3-workbench-discover</a></td>
+<td><code>W3</code></td>
+<td><code>tests/e2e/run_workbench.sh --scenario wb-discover</code></td>
+<td>—</td>
+<td>A submission that discovers its services, against a pre-started constellation.</td>
+</tr>
+<tr>
+<td><a href="e2e/w4-workbench-auto/">w4-workbench-auto</a></td>
+<td><code>W4</code></td>
+<td><code>tests/e2e/run_workbench.sh --scenario wb-auto</code></td>
+<td>—</td>
+<td>A submission whose placement offers an ordered list of alternatives.</td>
+</tr>
+<tr>
+<td><a href="e2e/w5-workbench-repeat/">w5-workbench-repeat</a></td>
+<td><code>W5</code></td>
+<td><code>tests/e2e/run_workbench.sh --scenario wb-repeat</code></td>
+<td>—</td>
+<td>A repeated campaign: counted then interval, with the warm start carried.</td>
+</tr>
+<tr>
+<td><a href="e2e/w6-workbench-continuous/">w6-workbench-continuous</a></td>
+<td><code>W6</code></td>
+<td><code>tests/e2e/run_workbench.sh --scenario wb-continuous</code></td>
+<td>—</td>
+<td>A continuous campaign bounded by a run ceiling, with one injected failing run.</td>
+</tr>
+<tr>
+<td><a href="e2e/w7-workbench-results/">w7-workbench-results</a></td>
+<td><code>W7</code></td>
+<td><code>tests/e2e/run_workbench.sh --scenario wb-results</code></td>
+<td>—</td>
+<td>The replay-equality check over a run that returned per-master scopes.</td>
+</tr>
+<tr>
+<td><a href="e2e/w8-workbench-logs/">w8-workbench-logs</a></td>
+<td><code>W8</code></td>
+<td><code>tests/e2e/run_workbench.sh --scenario wb-logs</code></td>
+<td>—</td>
+<td>The log router over a scenario that spawns, because the router carries the supervisor’s captured streams.</td>
+</tr>
+<tr>
+<td><a href="e2e/e1-engines-all/">e1-engines-all</a></td>
+<td><code>E1</code></td>
+<td><code>tests/e2e/run_engines.sh --lane all</code></td>
+<td>—</td>
+<td>The default CPU engine matrix — seven engine lanes in one invocation.</td>
+</tr>
+<tr>
+<td><a href="e2e/z1-zimpl-cli-pf001/">z1-zimpl-cli-pf001</a></td>
+<td><code>Z1</code></td>
+<td><code>ZIMPLCLI tests/e2e/run_scenario.sh --scenario pf001</code></td>
+<td>—</td>
+<td>The baseline scenario repeated on the alternative Zimpl backend.</td>
+</tr>
+<tr>
+<td><a href="e2e/k1-engines-pfe006-k1/">k1-engines-pfe006-k1</a></td>
+<td><code>K1</code></td>
+<td><code>tests/e2e/run_engines.sh --lane pfe006-k1</code></td>
+<td>—</td>
+<td>The speculative-farming baseline: no farm anywhere, and the control that proves defaults are off.</td>
+</tr>
+<tr>
+<td><a href="e2e/f1-engines-pfe006-farm/">f1-engines-pfe006-farm</a></td>
+<td><code>F1</code></td>
+<td><code>tests/e2e/run_engines.sh --lane pfe006-farm</code></td>
+<td>—</td>
+<td>The same fixture with a column farm on both children.</td>
+</tr>
+<tr>
+<td><a href="e2e/d1-engines-pfe006-debt/">d1-engines-pfe006-debt</a></td>
+<td><code>D1</code></td>
+<td><code>tests/e2e/run_engines.sh --lane pfe006-debt</code></td>
+<td>—</td>
+<td>Proof debt under a terminal-only certification policy.</td>
+</tr>
+<tr>
+<td><a href="e2e/s1-engines-pfe006-sampled/">s1-engines-pfe006-sampled</a></td>
+<td><code>S1</code></td>
+<td><code>tests/e2e/run_engines.sh --lane pfe006-sampled</code></td>
+<td>—</td>
+<td>Certification sampled per claim, with the terminal override.</td>
+</tr>
+<tr>
+<td><a href="e2e/x1-engines-pfe006-escalate/">x1-engines-pfe006-escalate</a></td>
+<td><code>X1</code></td>
+<td><code>tests/e2e/run_engines.sh --lane pfe006-escalate</code></td>
+<td>—</td>
+<td>Audit failure and escalation, asserted as theorems rather than as a schedule.</td>
+</tr>
+<tr>
+<td><a href="e2e/i1-inline/">i1-inline</a></td>
+<td><code>I1</code></td>
+<td><code>tests/e2e/run_inline.sh</code></td>
+<td>—</td>
+<td>A fully inline document: no external model or data file at all.</td>
+</tr>
+</tbody>
+</table>
+<p>Labels apply to CTest names, so only the two registered lanes carry any: both
+<code>pf_e2e_pf001</code> and <code>pf_e2e_pf002</code> are labelled <code>integration;distributed;public</code>.
+The other thirty lanes are run by the matrix driver rather than by CTest and
+have no labels to carry.</p>
+<h2 id="making-the-counts-add-up">Making the counts add up<a class="headerlink" href="#making-the-counts-add-up" title="Permanent link">&para;</a></h2>
+<p>Three numbers describe this suite, and they are not the same number.</p>
+<table>
+<thead>
+<tr>
+<th>Thing</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CTest test names</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td>Unit-test source files</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr>
+<td>End-to-end lanes</td>
+<td style="text-align: right;">32</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fifty CTest names</strong>, registered in <code>CMakeLists.txt</code>. Forty-one are driven by a
+C++ test binary; nine are driven by a shell script.</p>
+<p><strong>Forty-one binary-driven names over forty source files.</strong> Every unit-test source
+has exactly one CTest name, with one exception:
+<code>tests/unit/pf_Conductor_Supervisor_Tests.cpp</code> is registered twice, once per
+half, because the binary takes a flag that selects which half runs. That is
+41 = 40 + 1, and it is why the supervisor row above carries two names.</p>
+<p><strong>The nine script-driven names are not nine lanes.</strong> They are the two legacy
+scenario lanes, the prompt-pack conformance lane, the two staging-parity checks,
+the monolith-oracle sweep, the deep-adversarial inventory, the deep validation
+sweep, and the document lane.</p>
+<p><strong>Only two of the thirty-two lanes are registered with CTest.</strong> The other thirty
+are driven by the matrix driver, which reads <code>tests/tools/lanes.txt</code> and runs
+each invocation in turn. A lane needs a live constellation and an isolated DDS
+domain, so registering all of them as ordinary tests would make an ordinary
+<code>ctest</code> run try to start thirty constellations at once. How the matrix is driven,
+and what <code>--lane all</code> means, is on
+<a href="harness/">Test harness &amp; fixtures</a>.</p>
+<p>Forty unit pages plus thirty-two lane pages are the seventy-two detail pages this
+section carries.</p>
+<p>One further figure appears on <a href="../">Philosophy &amp; methodology</a>: 553
+<code>assert(</code> occurrences across the forty unit sources. It is a lower bound on cases
+rather than a count of them — one test function commonly asserts several
+independent facts — and it excludes the end-to-end assertions entirely.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 PlasticFog Technology Corp · Pre-release — August 2026 · License: to be announced
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

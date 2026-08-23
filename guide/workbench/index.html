@@ -1,0 +1,4973 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A distributed framework for nested, mixed-paradigm decomposition optimization">
+      
+      
+      
+        <link rel="canonical" href="https://stanmanwplan.github.io/PlasticFog/guide/workbench/">
+      
+      
+        <link rel="prev" href="../workflow/">
+      
+      
+        <link rel="next" href="../problem-definitions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Workbench reference - PlasticFog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#workbench-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PlasticFog" class="md-header__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlasticFog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Workbench reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PlasticFog" class="md-nav__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    PlasticFog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workbench reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workbench reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-client-and-the-conductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The client and the conductor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-verbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The verbs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The verbs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pf-ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf ping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-spec-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf spec import
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-spec-show-search-diff-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf spec show, search, diff, export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-spec-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf spec validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-refusal-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a refusal looks like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf command
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-campaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf campaign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-promptpack-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf promptpack build
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problem-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zimpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zimpl reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llm-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authoring with an LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/app-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services & control plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/state-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decomposition paradigms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speculative Farming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Speculative Farming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/using/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using speculative farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/column-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Column generation & pricing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/first-order-lp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First-order LP & inexactness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/proof-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof debt & certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/k-exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K-exchange farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitive analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approaches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Approaches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/plasmo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plasmo.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/coluna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coluna.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/sddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDDP.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/scenario-decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario decomposition frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/gpu-first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU-first solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/monolithic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monolithic solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/problem-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & files
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & files
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Files & artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality & Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quality & Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy & methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test harness & fixtures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unit tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/benderscuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersCuts_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/bendersmaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersMaster_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/blockplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BlockPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Catalog_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/columnverifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ColumnVerifier_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Commands_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor-logrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_LogRouter_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor-runscheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_RunScheduler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor-supervisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Supervisor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/deepcheck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_DeepCheck_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/enginecuopt-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineCuOpt_Loader_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/enginehighs-mathgate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_MathGate_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/enginehighs-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_Parity_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/failurepolicy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_FailurePolicy_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Graph_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/midpricing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MidPricing_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/monolithassembler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MonolithAssembler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/mps2english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Mps2English_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/probleminput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/probleminput-adversarial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Adversarial_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/refusalinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/refusalinventory-engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Engines_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/refusalinventory-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Workbench_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/replytable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ReplyTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/resourcedrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceDrive_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/resourceenvelope-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceEnvelope_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/responsetable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResponseTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/results-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Results_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/serviceidmanager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServiceIdManager_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/servicesrepo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/servicesrepo-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Schema_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/solverengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverEngine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/solverstatemachine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverStateMachine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/speculationprng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SpeculationPrng_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/stagingplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_StagingPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/verbattachment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_VerbAttachment_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/zimplcompiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplCompiler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/zimplregistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplRegistry_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/zimplstaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplStaging_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    End-to-end tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    End-to-end tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/d1-engines-pfe006-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1 — engines, pfe006-debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/e1-engines-all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 — engines, all
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/f1-engines-pfe006-farm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1 — engines, pfe006-farm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/i1-inline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I1 — inline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/k1-engines-pfe006-k1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K1 — engines, pfe006-k1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l1-scenario-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 — pf001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l2-scenario-pf002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 — pf002
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l3-generalized/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 — generalized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l4-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 — reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l5-scenario-pf002-degrade-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 — pf002, degrade sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l6-scenario-pf002-omit-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 — pf002, omit sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l7-nested/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L7 — nested
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l8-resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L8 — resource
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/s1-engines-pfe006-sampled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S1 — engines, pfe006-sampled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v1-nested-command-variant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V1 — nested, command variant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v2-nested-update-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V2 — nested, update lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v3-resource-degrade-robot-b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V3 — resource, degrade robot_b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v4-nested-mixed-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V4 — nested, mixed lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v5-nested-mixed-degrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V5 — nested mixed, degrade robot_r1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v6-nested-degrade-substitute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V6 — nested, degrade C1 substitute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v7-nested-degrade-abort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V7 — nested, degrade C1 abort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v8-nested-scopes-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V8 — nested, scopes lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w1-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W1 — workbench
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w2-workbench-spawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W2 — workbench, wb-spawn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w3-workbench-discover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W3 — workbench, wb-discover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w4-workbench-auto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W4 — workbench, wb-auto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w5-workbench-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W5 — workbench, wb-repeat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w6-workbench-continuous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W6 — workbench, wb-continuous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w7-workbench-results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W7 — workbench, wb-results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w8-workbench-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W8 — workbench, wb-logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/x1-engines-pfe006-escalate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X1 — engines, pfe006-escalate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/z1-zimpl-cli-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Z1 — pf001 under the Zimpl CLI backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roadmap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upcoming features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-client-and-the-conductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The client and the conductor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-verbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The verbs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The verbs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pf-ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf ping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-spec-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf spec import
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-spec-show-search-diff-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf spec show, search, diff, export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-spec-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf spec validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-refusal-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a refusal looks like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf command
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-campaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf campaign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-promptpack-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pf promptpack build
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="workbench-reference">Workbench reference<a class="headerlink" href="#workbench-reference" title="Permanent link">&para;</a></h1>
+<!-- dc:status=polished dc:owner=DC2 -->
+
+<p>The Workbench is the <code>pf</code> command-line experience: a thin client speaking JSON
+Lines over a Unix-domain socket to a resident <code>pf_Conductor</code>, which reaches the
+runtime by executing the staged application. This page is the verb surface, with
+a worked example for each major verb, and what a refusal looks like. The
+documents the verbs operate on are described under
+<a href="../problem-definitions/">Problem definitions</a>, field by field under
+<a href="../../reference/data/schemas/">Schemas</a>.</p>
+<p>The examples use the press-shop problem from the worked corpus
+(<code>promptpack/examples/natural_language/flat_dw/</code>): a shop prices two assembly
+lines, east and west, against one bottleneck press. Its problem id is
+<code>pp_press_shop</code> and its hand-derived optimum is 11.0.</p>
+<h2 id="the-client-and-the-conductor">The client and the conductor<a class="headerlink" href="#the-client-and-the-conductor" title="Permanent link">&para;</a></h2>
+<p><code>pf</code> decides two things on its own; everything else it asks the conductor.</p>
+<p><strong>Autostart.</strong> A missing socket is not an error. <code>pf</code> starts a conductor and
+connects to it, and the conductor's lifetime is then its own — it detaches, and
+this process exiting never takes it down, because a resident daemon whose life
+is tied to whichever command happened to start it is not resident.
+<code>--no-autostart</code> suppresses this, and the suppression is a stated failure rather
+than a silent one.</p>
+<p><strong>Ambiguity.</strong> A catalog search returns a ranked list, always. A unique identity
+match is used directly; anything else is prompted for when the session is
+interactive, and failed with the candidate list printed when it is not. A script
+that silently got whichever revision ranked highest is a script that will one
+day run the wrong model.</p>
+<p>The exit status is a small closed set: <code>0</code> the verb succeeded, <code>1</code> the conductor
+answered with an error or could not be reached, <code>2</code> usage, <code>4</code> an ambiguous
+selection in a non-interactive invocation.</p>
+<p>The socket path is <code>$PF_CONDUCTOR_SOCK</code> when set, else
+<code>$HOME/.plasticfog/conductor.sock</code>; <code>--socket</code> overrides it. <code>--json</code> is
+available on every command and prints the reply's data verbatim, with object
+keys in lexical order, so it is reproducible byte for byte from the same state.</p>
+<h2 id="the-verbs">The verbs<a class="headerlink" href="#the-verbs" title="Permanent link">&para;</a></h2>
+<p>Twenty-two protocol verbs, one protocol version, and an empty deferred-verb
+list — this build defers no verb it has named, which is a stronger statement
+than any non-empty list can make.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pf ping</code></td>
+<td>liveness, pid, protocol version, catalog and application directory</td>
+</tr>
+<tr>
+<td><code>pf conductor stop</code></td>
+<td>stops the resident daemon, after the reply is written</td>
+</tr>
+<tr>
+<td><code>pf capabilities [--json]</code></td>
+<td>the capability document: engines, placement modes, run-spec modes, solver kinds</td>
+</tr>
+<tr>
+<td><code>pf promptpack build --mode &lt;m&gt;</code></td>
+<td>assembles the prompt pack for one input mode</td>
+</tr>
+<tr>
+<td><code>pf spec import\|show\|search\|validate\|diff\|export</code></td>
+<td>the catalog: immutable, content-hashed, parent-linked revisions</td>
+</tr>
+<tr>
+<td><code>pf run &lt;app[@rev]&gt;</code></td>
+<td>one submission, resolved and executed</td>
+</tr>
+<tr>
+<td><code>pf command pause\|resume\|stop</code></td>
+<td>a control command against a running problem</td>
+</tr>
+<tr>
+<td><code>pf status [--run ID]</code></td>
+<td>run status out of the catalog</td>
+</tr>
+<tr>
+<td><code>pf deploy plan\|start\|status\|stop</code></td>
+<td>the deployment planner and process supervisor</td>
+</tr>
+<tr>
+<td><code>pf campaign start\|status</code></td>
+<td>repeated execution under the document's <code>runSpec</code></td>
+</tr>
+<tr>
+<td><code>pf results &lt;app&gt;\|--run ID</code></td>
+<td>the persistent results plane, queried or followed</td>
+</tr>
+<tr>
+<td><code>pf logs</code></td>
+<td>the log router</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pf-ping"><code>pf ping</code><a class="headerlink" href="#pf-ping" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf ping
+pong  pid &lt;pid&gt;  protocol v1
+  socket   &lt;socket path&gt;
+  catalog  &lt;catalog path&gt;
+  app dir  &lt;application directory&gt;
+  domain   &lt;domain&gt; / inforepo port &lt;port&gt;
+  runs     &lt;count&gt;
+</code></pre></div>
+<p>The first line is the liveness answer; the rest is the conductor's own
+configuration, which is what you check when a verb complains that this conductor
+is not configured for something.</p>
+<h3 id="pf-capabilities"><code>pf capabilities</code><a class="headerlink" href="#pf-capabilities" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf capabilities
+</code></pre></div>
+<p>The capability document is <strong>sourced, not stated</strong>: it is produced from the live
+runtime registry rather than kept by hand. It lists each engine with whether it
+is executable, the placement modes, the run-spec modes and the solver kinds,
+each split into what is executable and what is refused. It is the authority on
+what this build runs; where a table in this documentation and the snapshot
+disagree, read the snapshot.</p>
+<p><code>--json</code> emits the same document machine-readably. That form is the one the
+prompt pack carries, byte for byte.</p>
+<h3 id="pf-spec-import"><code>pf spec import</code><a class="headerlink" href="#pf-spec-import" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf spec import press_shop.problem.json --author you --note "first cut"
+imported pp_press_shop@1
+  contentHash       &lt;64 hex characters&gt;
+  validationStatus  valid   (as ingested; run `pf spec validate` for the authority)
+  applicationId     &lt;where the application id came from&gt;
+  storedSources     &lt;count&gt;
+  unresolved        0
+</code></pre></div>
+<p>The catalog is append-only. Importing bytes identical to the parent revision's
+records a new revision of the same content and says so, rather than overwriting
+anything. The stored validation status is what the codec said when the bytes
+were ingested, in whatever environment ran the import — which is why it is
+labelled and why <code>pf spec validate</code> is the authority instead.</p>
+<h3 id="pf-spec-show-search-diff-export"><code>pf spec show</code>, <code>search</code>, <code>diff</code>, <code>export</code><a class="headerlink" href="#pf-spec-show-search-diff-export" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf spec show pp_press_shop@1 --view summary
+pp_press_shop@1
+  title             &lt;title&gt;
+  problemId         pp_press_shop
+  contentHash       &lt;64 hex characters&gt;
+  schemaVersion     pf.problem_definition.v1
+  ...
+  nodes/boundaries  3/2
+  sources           &lt;count&gt;
+</code></pre></div>
+<p>The default view is <code>canonical</code>, and it sends the canonical document bytes to
+standard output alone, with everything about them on standard error, so the
+command is pipeable. <code>pf spec search &lt;text&gt;</code> prints ranked candidates with their
+match kind and score. <code>pf spec diff &lt;a@r1&gt; &lt;a@r2&gt;</code> prints whether two revisions
+are identical and the hunks between them. <code>pf spec export &lt;a@r&gt; --out &lt;dir&gt;</code>
+writes the revision's files out and lists what it wrote.</p>
+<h3 id="pf-spec-validate"><code>pf spec validate</code><a class="headerlink" href="#pf-spec-validate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf spec validate --file press_shop.problem.json --source-root .
+VALID  press_shop.problem.json
+  authority  pf_App --dry-run (exit 0)
+</code></pre></div>
+<p>The verb's authority is the real binary on a path that creates no participant
+and contacts no registry — not the catalog's stored status. Adding <code>--deep</code>
+stages every compile unit the runtime would build and compiles it in process:</p>
+<div class="highlight"><pre><span></span><code>$ pf spec validate --file press_shop.problem.json --source-root . --deep
+VALID  press_shop.problem.json
+  authority  pf_App --dry-run --deep (exit 0)
+</code></pre></div>
+<p><code>--no-advisories</code> suppresses <code>coverage.</code> informational items and only those.
+When you drive the application directly instead of going through a conductor,
+the same gate is <code>build/pf_App --problem &lt;doc&gt; --source-root &lt;dir&gt; --dry-run
+--deep</code>, and there <code>--deep</code> requires <code>--dry-run</code>: the reviewer compiles the
+staging plan, and the plan is what the dry-run path stops at.</p>
+<h3 id="what-a-refusal-looks-like">What a refusal looks like<a class="headerlink" href="#what-a-refusal-looks-like" title="Permanent link">&para;</a></h3>
+<p>A refused document prints <code>REFUSED</code>, a non-zero authority exit code, and one
+line per refusal — each carrying a stable code and the exact JSON Pointer it
+fired at:</p>
+<div class="highlight"><pre><span></span><code>$ pf spec validate --file press_shop_discovered.problem.json --source-root . --deep
+REFUSED  press_shop_discovered.problem.json
+  authority  pf_App --dry-run --deep (exit 4)
+  error [placement.deep_requires_explicit] /topology/nodes/press_shop/services/priceMaster/placement: deep validation requires resolved service ids; this binding uses query placement -- make it explicit, or validate without --deep
+  error [placement.deep_requires_explicit] /topology/nodes/line_east/services/priceSubproblem/placement: ...
+  error [placement.deep_requires_explicit] /topology/nodes/line_west/services/priceSubproblem/placement: ...
+</code></pre></div>
+<p>That is the query-placed variant of the same press shop, and it is the shape of
+a refusal worth recognising: one item per query-placed binding, and <strong>no
+<code>zimpl.</code> line anywhere in the report</strong>, because the reviewer refused without
+compiling anything. A report that refuses one thing and stays silent about
+everything downstream of it is telling you the truth about how far it got.</p>
+<p>Match on the code, edit at the pointer, and re-run both gates. Every code, its
+pointer form and a one-line repair are in
+<a href="../../reference/api/problem-input/">Problem input</a>;
+<a href="../workflow/">Workflow overview</a> covers the two gates and the order they run in.</p>
+<h3 id="pf-run"><code>pf run</code><a class="headerlink" href="#pf-run" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf run pp_press_shop@1 --wait 900
+run &lt;run id&gt;
+  status       completed
+  objective    11.0
+  exit         0
+  results      &lt;run directory&gt;/results.json
+  correlation  &lt;correlation id&gt;
+</code></pre></div>
+<p><code>--wait</code> bounds how long the client waits for the run; <code>--wait-services</code> bounds
+how long it waits for the constellation to be ready. The objective line reads
+<code>(not observed)</code> rather than a number when the run produced none, which is a
+different fact from producing zero.</p>
+<p>Submission executes the staged application as a child process rather than
+calling a library in the daemon: a submission ends by shutting down its DDS
+participant, which is process-global, so a resident daemon could serve exactly
+one in-process submission ever.</p>
+<h3 id="pf-command"><code>pf command</code><a class="headerlink" href="#pf-command" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf command pause --target line_east --run &lt;run id&gt;
+pause -&gt; line_east
+  published     true
+  acknowledged  1  (&lt;acknowledgement semantics&gt;)
+  exit          0
+</code></pre></div>
+<p>The verbs are <code>pause</code>, <code>resume</code> and <code>stop</code>. <code>--target</code> names a node; without it
+the command addresses the whole problem. The reply distinguishes <strong>published</strong>
+from <strong>acknowledged</strong>, and names the acknowledgement semantics it is reporting
+under, because a command that went out and a command that was taken up are
+different facts.</p>
+<h3 id="pf-status"><code>pf status</code><a class="headerlink" href="#pf-status" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf status
+2 run(s)
+  &lt;run id&gt;  completed  exit 0
+  &lt;run id&gt;  failed     exit &lt;code&gt;
+</code></pre></div>
+<p><code>--run &lt;id&gt;</code> narrows to one run.</p>
+<h3 id="pf-deploy"><code>pf deploy</code><a class="headerlink" href="#pf-deploy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf deploy plan pp_press_shop@1 --profile local
+plan pp_press_shop@1  profile local
+  problem      pp_press_shop  root press_shop
+  domain       250 / inforepo port 12350
+  infoRepo     spawn
+  actions      6
+    spawn  register [reg]
+      readiness  process_banner, deadline 30s (banner 30s)
+    spawn  priceSubproblem [sub1]  line_east/priceSubproblem
+      readiness  registry_registration, deadline 60s (banner 30s)
+    ...
+</code></pre></div>
+<p><code>plan</code> prints exactly what <code>start</code> would execute and performs <strong>no side
+effects</strong>: it starts no process, creates no directory, opens no model file and
+touches no registry. An operator has to be able to read a deployment before
+consenting to it, and a planning verb that consulted the registry could not be
+run twice with the same answer.</p>
+<p>Three action kinds come straight from the placement modes the document already
+spells: an explicit placement becomes <code>attach</code>, a query becomes <code>discover</code>, a
+spawn becomes <code>spawn</code>, and an ordered <code>auto</code> list becomes whichever alternative
+wins. A binding with alternatives prints its fallback chain, each arm with the
+reason it would be taken.</p>
+<p>Every action carries <strong>its own</strong> readiness deadline, and a spawned process
+carries two: one for its startup banner never appearing, one for the fact that
+decides readiness never becoming true. The two failures need different next
+steps, so a deadline that fires names its service:</p>
+<div class="highlight"><pre><span></span><code>sub2 (pf_SubService) started but never registered with the Register service within 60s
+</code></pre></div>
+<p>Readiness is three kinds this build genuinely observes — a process banner, a
+registry registration, and a registry query. There is deliberately no
+service-status kind, because that channel was measured silent across a healthy
+startup, and naming a kind the build cannot observe would be a plan claiming a
+capability.</p>
+<div class="highlight"><pre><span></span><code>$ pf deploy start pp_press_shop@1
+deployment &lt;deploy id&gt;
+  owned      6
+  discovered 0
+  running  reg   register         pid &lt;pid&gt;
+  running  sub1  priceSubproblem  pid &lt;pid&gt;
+  ...
+</code></pre></div>
+<p><code>pf deploy status</code> prints the same census later; <code>pf deploy stop</code> drains what
+this deployment started, through TERM and then KILL, and reports what it left
+running because it never started it. Processes this deployment does not own are
+labelled as such and are not signalled.</p>
+<h3 id="pf-campaign"><code>pf campaign</code><a class="headerlink" href="#pf-campaign" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf campaign start pp_press_shop@1 --budget 3600
+</code></pre></div>
+<p>A <strong>campaign</strong> is the activation of one revision, executed to that revision's
+<code>runSpec</code>; a <strong>run</strong> is one submit cycle inside it, with its own run id, its own
+directory and its own row in the results plane. A plain <code>pf run</code> is a campaign
+of exactly one run — not as a special case, but because an absent <code>runSpec</code> is
+configured as mode <code>once</code> and the two paths are one path.</p>
+<p>The scheduler is a pure decision engine. Modes are <code>once</code>, <code>counted</code>,
+<code>continuous</code> and <code>interval</code>; overlap policy is <code>skip</code> or <code>queue</code>; stopping is by
+count, by a run ceiling, by consecutive failures, or by the budget you passed.
+The cadence grid is anchored at the campaign's origin rather than at each run's
+end, so a cadence cannot drift by each run's duration. <code>pf campaign status
+[--campaign ID]</code> reports where a campaign is.</p>
+<h3 id="pf-results"><code>pf results</code><a class="headerlink" href="#pf-results" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf results pp_press_shop
+$ pf results --run &lt;run id&gt; --follow
+$ pf results --run &lt;run id&gt; --export events.jsonl
+</code></pre></div>
+<p>A plain query and a follow are two verbs on the wire rather than one verb with a
+flag, because they answer differently: a query returns rows, a follow streams
+them as events from a resumable cursor. The client hides that; the protocol does
+not blur it.</p>
+<p><code>--export</code> writes one JSON object per line — one line per result event and
+nothing else, no header, no trailer, no summary object — so a consumer can
+compare two exports without knowing which lines to skip.</p>
+<p>Ingestion is document-granular: one row per envelope the run's own results
+document carried, stored as the document carried it. No stream is simulated that
+the documents do not support.</p>
+<h3 id="pf-logs"><code>pf logs</code><a class="headerlink" href="#pf-logs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf logs --service sub1,sub2 --level warning --follow
+$ pf logs pp_press_shop@1 --terminal tmux
+</code></pre></div>
+<p>The log router fans in the streams the supervisor captured, labelled by service,
+pid and UTC time. <code>--level</code> filters structured records only, <code>--terminal tmux</code>
+presents them per service, and the default is genuinely silent. A positional
+<code>app[@rev]</code> names the <strong>policy</strong> rather than the logs: the streams belong to the
+deployment, and what the document contributes is the <code>observability</code> block that
+says how they should be presented.</p>
+<h3 id="pf-promptpack-build"><code>pf promptpack build</code><a class="headerlink" href="#pf-promptpack-build" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ pf promptpack build --mode natural_language --out /tmp/pack.txt
+prompt pack  mode natural_language  packVersion 1.0.0
+  root       &lt;pack root&gt;
+  snapshot   capabilities/generated_capability_snapshot.json   REGENERATED
+  ...
+  TOTAL      &lt;words&gt; words, &lt;bytes&gt; bytes
+  sha256     &lt;64 hex characters&gt;
+  written to /tmp/pack.txt
+</code></pre></div>
+<p>Without <code>--out</code>, the pack goes to standard output and the report to standard
+error, so a caller that pipes the pack somewhere gets the pack and nothing else.
+The capability snapshot is regenerated from the live registry before assembly,
+so a pack can never carry a capability statement older than the build that
+answers for it. <a href="../llm-authoring/">Authoring with an LLM</a> covers what the pack
+contains and how it is used.</p>
+<h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
+<p>A verb that fails answers with a code from a closed vocabulary rather than
+prose: <code>unknown_verb</code>, <code>version_mismatch</code>, <code>bad_request</code>, <code>not_found</code>,
+<code>ambiguous</code>, <code>invalid_document</code>, <code>run_failed</code>, <code>unavailable</code>, <code>internal</code>.</p>
+<p><code>unavailable</code> earns its place beside <code>run_failed</code>: "this conductor was started
+without a constellation to talk to" and "the submission failed" call for
+completely different responses, and collapsing them into one code would make the
+first look like the second.</p>
+<p>An error may attach detail — <code>ambiguous</code> attaches its candidates, <code>run_failed</code>
+attaches the run record — but detail may never rewrite the code or the message,
+so a reply cannot lie about what kind of failure it is.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 PlasticFog Technology Corp · Pre-release — August 2026 · License: to be announced
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

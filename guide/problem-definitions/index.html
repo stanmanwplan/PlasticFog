@@ -1,0 +1,4878 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A distributed framework for nested, mixed-paradigm decomposition optimization">
+      
+      
+      
+        <link rel="canonical" href="https://stanmanwplan.github.io/PlasticFog/guide/problem-definitions/">
+      
+      
+        <link rel="prev" href="../workbench/">
+      
+      
+        <link rel="next" href="../zimpl/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Problem definitions - PlasticFog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#problem-definitions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PlasticFog" class="md-header__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlasticFog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Problem definitions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PlasticFog" class="md-nav__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    PlasticFog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workbench reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem definitions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four parts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology-what-is-cut-apart-and-how" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topology: what is cut apart, and how
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topology: what is cut apart, and how">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nesting-and-mixing-paradigms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nesting, and mixing paradigms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundaries-the-method-declared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundaries: the method, declared
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-which-process-runs-this-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placement: which process runs this service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-the-models-and-inline-sources-are-first-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic: the models, and inline sources are first class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solvers-engines-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solvers: engines by role
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-and-repeated-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution, and repeated execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates-and-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates and commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-word-on-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A word on versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zimpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zimpl reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llm-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authoring with an LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/app-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services & control plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/state-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decomposition paradigms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speculative Farming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Speculative Farming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/using/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using speculative farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/column-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Column generation & pricing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/first-order-lp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First-order LP & inexactness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/proof-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof debt & certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/theory/k-exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K-exchange farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitive analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approaches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Approaches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/plasmo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plasmo.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/coluna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coluna.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/sddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDDP.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/scenario-decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario decomposition frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/gpu-first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU-first solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/competitive/monolithic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monolithic solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../speculative-farming/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/problem-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & files
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & files
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Files & artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality & Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quality & Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy & methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test harness & fixtures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unit tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/benderscuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersCuts_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/bendersmaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersMaster_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/blockplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BlockPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Catalog_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/columnverifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ColumnVerifier_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Commands_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor-logrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_LogRouter_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor-runscheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_RunScheduler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/conductor-supervisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Supervisor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/deepcheck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_DeepCheck_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/enginecuopt-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineCuOpt_Loader_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/enginehighs-mathgate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_MathGate_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/enginehighs-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_Parity_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/failurepolicy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_FailurePolicy_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Graph_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/midpricing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MidPricing_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/monolithassembler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MonolithAssembler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/mps2english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Mps2English_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/probleminput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/probleminput-adversarial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Adversarial_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/refusalinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/refusalinventory-engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Engines_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/refusalinventory-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Workbench_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/replytable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ReplyTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/resourcedrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceDrive_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/resourceenvelope-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceEnvelope_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/responsetable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResponseTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/results-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Results_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/serviceidmanager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServiceIdManager_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/servicesrepo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/servicesrepo-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Schema_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/solverengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverEngine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/solverstatemachine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverStateMachine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/speculationprng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SpeculationPrng_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/stagingplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_StagingPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/verbattachment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_VerbAttachment_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/zimplcompiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplCompiler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/zimplregistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplRegistry_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/unit/zimplstaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplStaging_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    End-to-end tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    End-to-end tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/d1-engines-pfe006-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1 — engines, pfe006-debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/e1-engines-all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 — engines, all
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/f1-engines-pfe006-farm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1 — engines, pfe006-farm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/i1-inline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I1 — inline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/k1-engines-pfe006-k1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K1 — engines, pfe006-k1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l1-scenario-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 — pf001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l2-scenario-pf002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 — pf002
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l3-generalized/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 — generalized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l4-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 — reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l5-scenario-pf002-degrade-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 — pf002, degrade sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l6-scenario-pf002-omit-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 — pf002, omit sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l7-nested/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L7 — nested
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/l8-resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L8 — resource
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/s1-engines-pfe006-sampled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S1 — engines, pfe006-sampled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v1-nested-command-variant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V1 — nested, command variant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v2-nested-update-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V2 — nested, update lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v3-resource-degrade-robot-b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V3 — resource, degrade robot_b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v4-nested-mixed-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V4 — nested, mixed lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v5-nested-mixed-degrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V5 — nested mixed, degrade robot_r1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v6-nested-degrade-substitute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V6 — nested, degrade C1 substitute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v7-nested-degrade-abort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V7 — nested, degrade C1 abort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/v8-nested-scopes-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V8 — nested, scopes lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w1-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W1 — workbench
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w2-workbench-spawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W2 — workbench, wb-spawn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w3-workbench-discover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W3 — workbench, wb-discover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w4-workbench-auto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W4 — workbench, wb-auto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w5-workbench-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W5 — workbench, wb-repeat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w6-workbench-continuous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W6 — workbench, wb-continuous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w7-workbench-results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W7 — workbench, wb-results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/w8-workbench-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W8 — workbench, wb-logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/x1-engines-pfe006-escalate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X1 — engines, pfe006-escalate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quality/tests/e2e/z1-zimpl-cli-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Z1 — pf001 under the Zimpl CLI backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roadmap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upcoming features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four parts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology-what-is-cut-apart-and-how" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topology: what is cut apart, and how
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topology: what is cut apart, and how">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nesting-and-mixing-paradigms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nesting, and mixing paradigms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundaries-the-method-declared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundaries: the method, declared
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-which-process-runs-this-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placement: which process runs this service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-the-models-and-inline-sources-are-first-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic: the models, and inline sources are first class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solvers-engines-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solvers: engines by role
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-and-repeated-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution, and repeated execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates-and-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates and commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-word-on-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A word on versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="problem-definitions">Problem definitions<a class="headerlink" href="#problem-definitions" title="Permanent link">&para;</a></h1>
+<!-- dc:status=polished dc:owner=DC2 -->
+
+<p>A <strong>problem definition</strong> is one JSON document, <code>pf.problem_definition.v1</code>, and
+it is the whole of what you hand PlasticFog. This page is a guided tour of what
+it declares — the topology, the logic, the solvers and the methods — with a
+small annotated example. Field-level exhaustiveness belongs to
+<a href="../../reference/data/schemas/">Schemas</a>; this page is the shape and the reasons.</p>
+<p>Two words are used precisely and it is worth fixing them first. A <strong>problem
+definition</strong> is the document you author, the whole artifact. A <strong>schema</strong> is
+<code>pf_problem_input.schema.json</code>, the machine-readable grammar the document has to
+satisfy. You do not edit the schema; you satisfy it.</p>
+<h2 id="the-four-parts">The four parts<a class="headerlink" href="#the-four-parts" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>problem</code></td>
+<td>the identity: id, version, revision, a description, and metadata — put your hand-derived oracle here</td>
+</tr>
+<tr>
+<td><code>resources</code></td>
+<td>the <strong>models</strong>, one Zimpl program per role, and the <strong>data</strong> they read</td>
+</tr>
+<tr>
+<td><code>topology</code></td>
+<td>the <strong>nodes</strong>, their <strong>services</strong> and solver engines, and the <strong>boundaries</strong> between them</td>
+</tr>
+<tr>
+<td><code>execution</code></td>
+<td>iteration limits, tolerances, and what results come back</td>
+</tr>
+</tbody>
+</table>
+<p>Three optional top-level blocks sit beside them: <code>runSpec</code> (how many times the
+submission executes and on what cadence), <code>observability</code> (what streams and how
+it is displayed) and <code>catalog</code> (inert identity metadata — an application id, a
+title, tags).</p>
+<p><strong>A definition is not a model file with a wrapper around it.</strong> The topology is
+the part that carries the decomposition, and the decomposition is the part a
+reader cannot recover by reading your Zimpl. Which index separates the blocks,
+which rows stay at the master, who decides each symbol that crosses a
+boundary — those are design decisions, and the document is written <em>in terms of</em>
+them rather than <em>about</em> them. Say which one you chose, in <code>problem.metadata</code>.</p>
+<h2 id="the-example">The example<a class="headerlink" href="#the-example" title="Permanent link">&para;</a></h2>
+<p>The tour follows the press shop from the worked corpus
+(<code>promptpack/examples/natural_language/flat_dw/</code>). A shop feeds two assembly
+lines, east and west. One press gives the shop four press-hours a shift. Each
+line runs exactly one of two shift patterns: east runs its normal pattern for 3
+at 3 press-hours or a lean pattern for 7 at 1 press-hour; west is 4 at 3
+press-hours or 9 at 1. Both lines must run something.</p>
+<p>Enumerate the four combinations and the cheap pair is over budget; the optimum
+is 11.0 and it is unique. Notice the property that makes the instance worth
+decomposing: each line's own cheapest pattern eats 3 of the 4 press-hours, so
+the uncoordinated sum of the per-line minima is 7 — strictly better than the
+true optimum and unreachable. A run that failed to coordinate could not land on
+11.0 by accident. That sentence belongs in <code>problem.metadata</code>, and in the
+document it is exactly where it is:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"problem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pp_press_shop"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"revision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A press shop prices two assembly lines against one shared bottleneck press..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"expectedObjective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"oracle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hand-derived by exhaustive enumeration of all four pattern combinations..."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"whyCoordinationIsRequired"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Each line's own cheapest pattern consumes more of the single press budget than the pair can afford..."</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>problem.id</code> is a stable identifier — spellable in a path and in a topic name.
+<code>revision</code> is owned by the manager, not by you: a patch may not modify it, and a
+successful update assigns the next one exactly once.</p>
+<h2 id="topology-what-is-cut-apart-and-how">Topology: what is cut apart, and how<a class="headerlink" href="#topology-what-is-cut-apart-and-how" title="Permanent link">&para;</a></h2>
+<p><code>topology</code> names a <code>rootNodeId</code>, a map of <code>nodes</code>, and a map of <code>boundaries</code>.
+Every node declares its <code>role</code> (<code>master</code>, <code>mid</code> or <code>subproblem</code>), its <code>level</code>
+(the root is 0 and each step down adds one), and the <strong>services</strong> it hosts. A
+service is one of four roles — <code>priceMaster</code>, <code>priceSubproblem</code>,
+<code>resourceMaster</code>, <code>resourceSubproblem</code> — and carries the model it runs, the
+solver engine it runs on, its placement, and the data it declares.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"topology"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"rootNodeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"press_shop"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nodes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"press_shop"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w"> </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"priceMaster"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"modelRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"press_master"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"solver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cpu"</span><span class="p">,</span><span class="w"> </span><span class="nt">"engine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dip"</span><span class="p">,</span><span class="w"> </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">"placement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"explicit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"serviceIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1038</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">"dataRefs"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"line_east"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subproblem"</span><span class="p">,</span><span class="w"> </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"priceSubproblem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"modelRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"press_line"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"solver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cpu"</span><span class="p">,</span><span class="w"> </span><span class="nt">"engine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"symphony"</span><span class="p">,</span><span class="w"> </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">"placement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"explicit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"serviceIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">10058</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">"dataRefs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"subprobs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"rmp"</span><span class="p">,</span><span class="w"> </span><span class="s2">"patterns"</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The validator requires that the topology be exactly one connected rooted tree:
+one parent per non-root node, no cycles, no unreachable node, declared levels
+equal to actual depth, and roles consistent with position. Those are semantic
+rules the C++ layer enforces rather than the JSON grammar, and each has its own
+refusal code.</p>
+<h3 id="nesting-and-mixing-paradigms">Nesting, and mixing paradigms<a class="headerlink" href="#nesting-and-mixing-paradigms" title="Permanent link">&para;</a></h3>
+<p>The four service roles are what make <strong>nesting</strong> expressible. A mid-level node
+can be a subproblem to its parent and a master to its children — a
+resource-directed subproblem above, a price-directed master below, or the
+reverse — because the two directions are two different modules on the same
+logical node. That is how a decomposition spans processes and physical nodes:
+each service binding resolves to a service id, and a service id is a process in
+the constellation.</p>
+<p>One restriction applies downward only. <strong>All of one node's child boundaries must
+carry the same paradigm.</strong> A node that masters some children price-directed and
+others resource-directed would have to run two decomposition algorithms over one
+model at once, and the runtime has no shape for that; the validator says so by
+name (<code>topology.mixed_downward_paradigms</code>). The restriction says nothing about
+the up direction. <a href="../../architecture/decomposition/">Decomposition paradigms</a>
+covers which nested shapes execute.</p>
+<h3 id="boundaries-the-method-declared">Boundaries: the method, declared<a class="headerlink" href="#boundaries-the-method-declared" title="Permanent link">&para;</a></h3>
+<p>A boundary names its parent and child, its <code>paradigm</code>, its <code>binding</code>, and its
+coupling contract. The paradigm is the <strong>method</strong>: <code>price_directed</code>, where the
+master hands prices down and receives column proposals back, or
+<code>resource_directed</code>, where the master hands an allocation down and receives cuts
+back. The binding names the algorithm.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"boundaries"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"shop_to_line_east"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"parentNodeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"press_shop"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"childNodeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line_east"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"paradigm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price_directed"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"binding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dantzig_wolfe"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"coupling"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authoring_convention"</span><span class="p">,</span><span class="w"> </span><span class="nt">"declarations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>coupling.mode</code> says how the symbols that cross the boundary are identified.
+<code>side_declaration</code> requires an explicit list, each declaration naming the
+parent's spelling and the child's spelling of one symbol, and the resource path
+uses it: the master publishes an allocation in its own names, the child fixes
+columns in its own, and the child translates in both directions. A resource
+boundary also carries the <strong>epigraph</strong> — the master's own recourse variable,
+canonically <code>pf_theta</code> — as the declaration whose coupling key is <code>epigraph</code>.</p>
+<p><code>authoring_convention</code> leaves symbol discovery to the naming conventions the
+models already encode, and it is what every price boundary uses. Nothing in the
+runtime consumes coupling declarations on a price boundary, so a declaration
+list there would be visible in the document and ignored by the runtime — which
+is worse than no list, because it reads as a contract and is not one.</p>
+<p>A declaration's owner must be the parent or the child of <em>that</em> boundary. A
+sibling is not an owner and a grandparent is not an owner; the refusal is
+<code>coupling.owner_outside_boundary</code>. A declaration can also participate in a
+multi-level promotion chain, using a stable promotion id and the ordered roles
+<code>origin</code>, zero or more <code>pass_through</code>, and <code>terminus</code>.</p>
+<h2 id="placement-which-process-runs-this-service">Placement: which process runs this service<a class="headerlink" href="#placement-which-process-runs-this-service" title="Permanent link">&para;</a></h2>
+<p>Four placement forms are spellable. <code>explicit</code> names resolved service ids.
+<code>query</code> names a selector the registry answers at submit — a service type, a
+count, required capability tokens, and an ordering policy. <code>spawn</code> says the
+submitting side will start and own local processes for this binding. <code>auto</code> is
+an ordered list of at most four alternatives, tried until one resolves, and it
+may not nest.</p>
+<p><strong>Use <code>explicit</code> if you want the deep gate.</strong> A dry run contacts no registry, so
+it cannot resolve a query placement; rather than compile a graph whose service
+ids you never wrote, the reviewer refuses with
+<code>placement.deep_requires_explicit</code>, one item per query-placed binding and
+without compiling anything. The two repairs answer different questions: rewrite
+the placements as <code>explicit</code> if you want the deep gate, or leave them and
+validate without <code>--deep</code> if you want discovery. Nothing else changes — the same
+models, the same data and the same topology compile clean either way.</p>
+<h2 id="logic-the-models-and-inline-sources-are-first-class">Logic: the models, and inline sources are first class<a class="headerlink" href="#logic-the-models-and-inline-sources-are-first-class" title="Permanent link">&para;</a></h2>
+<p><code>resources.models</code> maps a model id to a Zimpl program. <code>resources.data</code> maps a
+data id to a data resource and says how it is distributed.</p>
+<p><strong>A source may be carried inline in the document, and that is the preferred
+form.</strong> An inline document is the whole artifact: one JSON file, nothing beside
+it, and no source root to stage. All ten worked goldens are all-inline, and the
+runtime executes that shape directly.</p>
+<p>Inline sources are named by rule, and the names are load bearing:</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Its staged name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>an inline <strong>master</strong> model</td>
+<td><code>Pf.zpl</code></td>
+</tr>
+<tr>
+<td>an inline <strong>child</strong> model</td>
+<td><code>&lt;modelId&gt;.zpl</code> — its own key in <code>resources.models</code></td>
+</tr>
+<tr>
+<td>an inline <strong>data</strong> resource</td>
+<td><code>&lt;dataId&gt;.data</code></td>
+</tr>
+<tr>
+<td>a <code>file</code> source</td>
+<td>its bare basename</td>
+</tr>
+</tbody>
+</table>
+<p>The child's staged name is the name the master's <code>include</code> line must use. A
+child at <code>resources.models.press_line</code> is included as <code>include "press_line.zpl";</code>
+and nothing else will resolve.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"models"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"press_master"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zimpl"</span><span class="p">,</span><span class="w"> </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"inline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"...\ninclude \"press_line.zpl\";\n"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"press_line"</span><span class="p">:</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zimpl"</span><span class="p">,</span><span class="w"> </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"inline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subto sub000_001: forall &lt;s&gt; in subprob_ids ..."</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"subprobs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zimpl_data"</span><span class="p">,</span><span class="w"> </span><span class="nt">"distribution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"per_service_id"</span><span class="p">,</span><span class="w"> </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"inline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10058\n10048\n"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"rmp"</span><span class="p">:</span><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zimpl_data"</span><span class="p">,</span><span class="w"> </span><span class="nt">"distribution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all_nodes"</span><span class="p">,</span><span class="w">      </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"inline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"# press hours available per shift\n4\n"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"patterns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zimpl_data"</span><span class="p">,</span><span class="w"> </span><span class="nt">"distribution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all_nodes"</span><span class="p">,</span><span class="w">      </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"inline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A <code>file</code> source is a relative path, confined to the source root, with no <code>..</code>
+and no empty components. Either form may carry a <code>sha256</code> pin: when the codec
+resolves content it computes the digest and emits it in the canonical document,
+and a digest you supplied is authoritative — a mismatch rejects the transaction
+rather than being silently absorbed.</p>
+<p>Two rules about the models themselves are the ones first-time authors meet.
+<strong>A master's data files are declared on its children</strong>: the distribution
+collects every data module attached to each of a master's children and hands the
+whole set to the master's compile, so a <code>read</code> in a master model resolves
+against files declared on that master's children, and the master's own
+<code>dataRefs</code> may be empty. And <strong>the master's file has three parts in order</strong> —
+declarations, then the constraint regions holding the rows that are the master's
+alone, then one <code>include</code> per child template — because each child's model is
+built as the master's file with the includes and the constraint regions removed,
+followed by that child's own template. <a href="../zimpl/">Zimpl reference</a> covers both
+in full, along with the naming convention the block generator reads.</p>
+<h2 id="solvers-engines-by-role">Solvers: engines by role<a class="headerlink" href="#solvers-engines-by-role" title="Permanent link">&para;</a></h2>
+<p>Each service binding may name its solver: a <code>kind</code> (<code>cpu</code> by default, or <code>gpu</code>),
+an <code>engine</code>, and an opaque <code>options</code> object whose shape belongs to the engine.
+When <code>solver</code> is absent the engine defaults by role, and the codec materializes
+that default in the canonical document — so omitting the block and stating the
+role default produce identical canonical bytes and therefore the same content
+hash.</p>
+<p><a href="../workbench/"><code>pf capabilities --json</code></a> is the authority on what this build
+executes, and the
+prompt pack carries the same document byte for byte. The table below is the
+narrower statement: every name in it is in the snapshot as executable <strong>and has
+been run at that role by a test lane</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Run-proven</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>priceMaster</code></td>
+<td><code>dip</code> only</td>
+<td><code>dip</code></td>
+</tr>
+<tr>
+<td><code>priceSubproblem</code></td>
+<td><code>symphony</code>, <code>highs</code></td>
+<td><code>symphony</code></td>
+</tr>
+<tr>
+<td><code>resourceMaster</code></td>
+<td><code>cbc</code>, <code>clp</code>, <code>highs</code></td>
+<td><code>cbc</code></td>
+</tr>
+<tr>
+<td><code>resourceSubproblem</code></td>
+<td><code>clp</code>, <code>highs</code></td>
+<td><code>clp</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>dip</code> is the only engine at a price master because it is a coordinator that
+selects its own integer solver; an accepted-but-rerouted engine would be a
+silent lie about what ran. At a resource subproblem the recourse must be
+continuous — its cuts are LP duals, and an integer column makes them certify
+nothing — so integer-capable engines other than <code>highs</code> are refused there by
+name.</p>
+<p>Selecting an engine a role does not accept is <code>solver.engine_role_incompatible</code>.
+A <code>kind: gpu</code> selection is an assertion about a machine that no document can
+settle, so it is a warning rather than an error, silenced by a placement query
+that requires the capability.</p>
+<p>A binding may also state what the answer must certify. <code>solver.guarantee</code> names
+a <code>requirement</code> — <code>exact_required</code> by default, or <code>best_effort</code> — and what to do
+when a result is uncertified: refuse, or fall back to a named engine. A fallback
+must name its engine, and that engine must itself be legal for the role, because
+a fallback onto an engine the role cannot run is a fallback that would fail the
+moment it was taken.</p>
+<h2 id="execution-and-repeated-execution">Execution, and repeated execution<a class="headerlink" href="#execution-and-repeated-execution" title="Permanent link">&para;</a></h2>
+<p><code>execution</code> carries the solve policy: iteration limits, a time limit, a
+convergence tolerance, an inner-solve policy, and a <code>results</code> block saying which
+scope reports, where the results document is written, how long to wait, and
+whether to filter variables or report interim progress.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"execution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"maxIterations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"timeLimitSeconds"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"convergenceTolerance"</span><span class="p">:</span><span class="w"> </span><span class="mf">1e-06</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"innerSolvePolicy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"converged"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"return"</span><span class="p">:</span><span class="w"> </span><span class="s2">"overall"</span><span class="p">,</span><span class="w"> </span><span class="nt">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"results.json"</span><span class="p">,</span><span class="w"> </span><span class="nt">"waitSeconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span><span class="w"> </span><span class="nt">"returnScopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"overall"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>returnScopes</code> defaults to <code>["overall"]</code>, the reserved scope naming the root
+node's master. Any other entry must name a declared node carrying a master-side
+role: a mid qualifies, because its master half is a real coordinator reporting
+for its own subtree; a leaf subproblem does not, because it holds no results
+envelope of its own.</p>
+<p><code>runSpec</code> is separate from <code>execution</code> because it is about repetition rather
+than about one solve: a <code>mode</code> of <code>once</code>, <code>counted</code>, <code>continuous</code> or <code>interval</code>,
+with <code>count</code> required exactly when the mode is <code>counted</code> and an interval
+required exactly when it is <code>interval</code>, an overlap policy, a warm-start policy,
+and stop conditions. Both if-and-only-if rules are enforced in both directions —
+a <code>count</code> beside a mode that never reads it is a number the author expects to
+matter, so saying nothing would be the worse answer.</p>
+<p>An absent <code>runSpec</code> and a present one saying <code>once</code> mean the same thing
+operationally and are deliberately not the same document: the second is an
+author stating a choice, and a canonical form that erased the statement would
+erase it from the content hash too.</p>
+<h2 id="updates-and-commands">Updates and commands<a class="headerlink" href="#updates-and-commands" title="Permanent link">&para;</a></h2>
+<p>The same schema file carries two further document kinds, dispatched by
+<code>schemaVersion</code>.</p>
+<p>A <code>pf.problem_update.v1</code> document is a <strong>spot update</strong>: an update id, the target
+problem id, the exact base revision it was built against, an optional base
+content hash, a mode (<code>json_patch</code>, <code>merge_patch</code> or <code>replace</code>), an interrupt
+directive, and the payload. The manager applies every update to a private copy,
+reparses and revalidates the whole candidate, and publishes atomically only when
+every check passes — a failed update never changes the active definition.</p>
+<p>What an update may change is decided against the node it targets rather than
+against the run as a whole: each rule walks the target's own subtree and asks
+whether any node in it is solving or paused. Changes to models, data and
+execution policy are legal against a target that is solving or paused, so a
+sub-hierarchy's mathematical logic can be revised while it is working and while
+the rest of the problem keeps solving.</p>
+<p>Structural changes against such a target are refused rather than applied: a
+paradigm or binding change, a placement change, or an engine change on a subtree
+that holds a solving or paused node, and the removal of a node with running
+descendants. The first three are waived by <code>interrupt: always</code>, and the waiver
+is recorded as a warning — the waiver halts the affected subtree's masters
+before the update is published, so it interrupts those solves rather than
+slipping past them. The fourth is not waivable by anything: interrupting a solve
+still leaves the removed node's descendants with no parent to report to.</p>
+<p>A <code>pf.problem_command.v1</code> document is a <strong>control command</strong> — <code>start</code>, <code>pause</code>,
+<code>resume</code>, <code>stop</code>, <code>halt</code> or <code>request_results</code> — against a problem already
+submitted. It parses standalone: the problem is named by id and the definition
+is not required in the same document, so a caller holding only the command can
+accept or reject it on shape alone.</p>
+<h2 id="a-word-on-versions">A word on versions<a class="headerlink" href="#a-word-on-versions" title="Permanent link">&para;</a></h2>
+<p><code>schemaVersion</code> has stayed <code>pf.problem_definition.v1</code> across capability
+additions, and that is a rule rather than an oversight. Every addition has been
+optional with a default, and no existing field has changed meaning: a document
+written before an addition parses after it and means the same thing, and a
+document written after it, read by a consumer that predates it, loses the new
+fields and is still a coherent problem. A version bump would be required only if
+a field became mandatory or an existing one changed meaning.</p>
+<p>New <em>document kinds</em> do get their own versions, because they are new documents
+rather than new fields — which is why the update and command forms carry theirs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 PlasticFog Technology Corp · Pre-release — August 2026 · License: to be announced
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

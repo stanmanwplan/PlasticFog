@@ -1,0 +1,5512 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A distributed framework for nested, mixed-paradigm decomposition optimization">
+      
+      
+      
+        <link rel="canonical" href="https://stanmanwplan.github.io/PlasticFog/reference/api/problem-input/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../control/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Problem input - PlasticFog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#problem-input" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="PlasticFog" class="md-header__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlasticFog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Problem input
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PlasticFog" class="md-nav__button md-logo" aria-label="PlasticFog" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    PlasticFog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/first-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workbench reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/problem-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/zimpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zimpl reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/llm-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authoring with an LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/app-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services & control plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/state-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decomposition paradigms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speculative Farming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Speculative Farming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/using/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using speculative farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/theory/column-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Column generation & pricing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/theory/first-order-lp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First-order LP & inexactness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/theory/proof-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof debt & certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/theory/k-exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K-exchange farming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/competitive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitive analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approaches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Approaches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/competitive/plasmo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plasmo.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/competitive/coluna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coluna.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/competitive/sddp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDDP.jl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/competitive/scenario-decomposition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario decomposition frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/competitive/gpu-first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU-first solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/competitive/monolithic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monolithic solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../speculative-farming/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem input
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading a document
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-and-canonical-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing and canonical form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-against-a-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands against a topology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifiers-vocabulary-and-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifiers, vocabulary and capability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The object model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owning-the-active-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Owning the active definition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Owning the active definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-a-running-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating a running problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content hashing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-refusal-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The refusal surface
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & files
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & files
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Files & artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality & Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quality & Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy & methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test harness & fixtures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unit tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/benderscuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersCuts_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/bendersmaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BendersMaster_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/blockplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_BlockPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Catalog_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/columnverifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ColumnVerifier_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Commands_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/conductor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/conductor-logrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_LogRouter_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/conductor-runscheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_RunScheduler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/conductor-supervisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Conductor_Supervisor_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/deepcheck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_DeepCheck_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/enginecuopt-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineCuOpt_Loader_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/enginehighs-mathgate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_MathGate_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/enginehighs-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_EngineHighs_Parity_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/failurepolicy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_FailurePolicy_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Graph_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/midpricing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MidPricing_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/monolithassembler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_MonolithAssembler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/mps2english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Mps2English_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/probleminput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/probleminput-adversarial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ProblemInput_Adversarial_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/refusalinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/refusalinventory-engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Engines_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/refusalinventory-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_RefusalInventory_Workbench_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/replytable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ReplyTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/resourcedrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceDrive_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/resourceenvelope-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResourceEnvelope_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/responsetable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ResponseTable_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/results-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_Results_Types_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/serviceidmanager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServiceIdManager_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/servicesrepo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/servicesrepo-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ServicesRepo_Schema_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/solverengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverEngine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/solverstatemachine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SolverStateMachine_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/speculationprng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_SpeculationPrng_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/stagingplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_StagingPlan_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/verbattachment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_VerbAttachment_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/zimplcompiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplCompiler_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/zimplregistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplRegistry_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/unit/zimplstaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pf_ZimplStaging_Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    End-to-end tests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    End-to-end tests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/d1-engines-pfe006-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1 — engines, pfe006-debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/e1-engines-all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E1 — engines, all
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/f1-engines-pfe006-farm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1 — engines, pfe006-farm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/i1-inline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I1 — inline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/k1-engines-pfe006-k1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K1 — engines, pfe006-k1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l1-scenario-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 — pf001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l2-scenario-pf002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 — pf002
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l3-generalized/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 — generalized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l4-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 — reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l5-scenario-pf002-degrade-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 — pf002, degrade sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l6-scenario-pf002-omit-sub2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 — pf002, omit sub2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l7-nested/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L7 — nested
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/l8-resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L8 — resource
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/s1-engines-pfe006-sampled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S1 — engines, pfe006-sampled
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v1-nested-command-variant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V1 — nested, command variant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v2-nested-update-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V2 — nested, update lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v3-resource-degrade-robot-b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V3 — resource, degrade robot_b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v4-nested-mixed-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V4 — nested, mixed lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v5-nested-mixed-degrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V5 — nested mixed, degrade robot_r1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v6-nested-degrade-substitute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V6 — nested, degrade C1 substitute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v7-nested-degrade-abort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V7 — nested, degrade C1 abort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/v8-nested-scopes-lane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V8 — nested, scopes lane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w1-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W1 — workbench
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w2-workbench-spawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W2 — workbench, wb-spawn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w3-workbench-discover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W3 — workbench, wb-discover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w4-workbench-auto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W4 — workbench, wb-auto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w5-workbench-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W5 — workbench, wb-repeat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w6-workbench-continuous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W6 — workbench, wb-continuous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w7-workbench-results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W7 — workbench, wb-results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/w8-workbench-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W8 — workbench, wb-logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/x1-engines-pfe006-escalate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X1 — engines, pfe006-escalate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quality/tests/e2e/z1-zimpl-cli-pf001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Z1 — pf001 under the Zimpl CLI backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roadmap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upcoming features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading a document
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-and-canonical-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing and canonical form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-against-a-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands against a topology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifiers-vocabulary-and-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifiers, vocabulary and capability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The object model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owning-the-active-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Owning the active definition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Owning the active definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-a-running-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating a running problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content hashing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-refusal-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The refusal surface
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="problem-input">Problem input<a class="headerlink" href="#problem-input" title="Permanent link">&para;</a></h1>
+<!-- dc:status=polished dc:owner=DC4a -->
+
+<p>The problem-input library is the C++ entry point for everything an author
+writes: a problem definition, a spot update against one, or a control command
+addressed at a running problem. This page documents the calls a program makes
+against those documents — parsing, validation, canonical form, transactional
+ownership of the active definition — and the error surface the validator
+refuses with.</p>
+<p>Four headers make up the surface: <code>pf_ProblemInput.h</code> (the codec and semantic
+validator), <code>pf_ProblemInput_Manager.h</code> (the transactional owner),
+<code>pf_Json.h</code> (the value type everything is expressed in) and <code>pf_Hash.h</code> (the
+content hash). They build into <code>pf_problem_input</code>, which links no DDS, no
+COIN-OR and no SQLite; see the <a href="../">API overview</a>.</p>
+<p>For the fields these documents carry, rather than the calls that read them, see
+<a href="../../../guide/problem-definitions/">Problem definitions</a> and
+<a href="../../data/schemas/">Schemas</a>.</p>
+<h2 id="documents">Documents<a class="headerlink" href="#documents" title="Permanent link">&para;</a></h2>
+<p>One codec reads all three document kinds and dispatches on the version string
+each carries.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pf_ProblemInput_DocumentKind</code></td>
+<td><code>enum class pf_ProblemInput_DocumentKind { ProblemDefinition, ProblemUpdate, ProblemCommand }</code></td>
+<td>which of the three a document is</td>
+</tr>
+<tr>
+<td><code>pf_ProblemInput_Document::kind</code></td>
+<td><code>pf_ProblemInput_DocumentKind kind = pf_ProblemInput_DocumentKind::ProblemDefinition;</code></td>
+<td>the discriminator</td>
+</tr>
+<tr>
+<td><code>pf_ProblemInput_Document::problem</code></td>
+<td><code>pf_ProblemDefinition problem;</code></td>
+<td>populated when <code>kind</code> is <code>ProblemDefinition</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemInput_Document::update</code></td>
+<td><code>pf_ProblemUpdate update;</code></td>
+<td>populated when <code>kind</code> is <code>ProblemUpdate</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemInput_Document::command</code></td>
+<td><code>pf_ProblemCommand command;</code></td>
+<td>populated when <code>kind</code> is <code>ProblemCommand</code></td>
+</tr>
+</tbody>
+</table>
+<p>The version strings are declared as constants in the same header —
+<code>PF_PROBLEM_DEFINITION_SCHEMA_VERSION</code>, <code>PF_PROBLEM_UPDATE_SCHEMA_VERSION</code>,
+<code>PF_PROBLEM_COMMAND_SCHEMA_VERSION</code>, and two legacy package versions the codec
+still imports.</p>
+<h2 id="reading-a-document">Reading a document<a class="headerlink" href="#reading-a-document" title="Permanent link">&para;</a></h2>
+<p><code>pf_ProblemInput</code> is a class of static functions. Its header states the scope
+of the whole class: "All APIs are DDS-free and can be called from an LLM tool, a
+local app, or an API handler."</p>
+<p>Every entry point takes an output object, a report, and options; every one
+returns <code>pf_Status</code> — the shared return convention, documented under
+<a href="../#errors-and-status">Errors and status</a>. The <code>Value</code> forms read a JSON
+value already in memory, the <code>Text</code> forms parse a string, and the <code>File</code> forms
+read a bounded file.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>parseDocumentText</code></td>
+<td><code>static pf_Status parseDocumentText(std::string_view jsonText, pf_ProblemInput_Document&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>parse any of the three kinds from a string</td>
+</tr>
+<tr>
+<td><code>parseDocumentValue</code></td>
+<td><code>static pf_Status parseDocumentValue(const pf_JsonValue&amp; document, pf_ProblemInput_Document&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>the same from a parsed JSON value</td>
+</tr>
+<tr>
+<td><code>parseProblemText</code></td>
+<td><code>static pf_Status parseProblemText(std::string_view jsonText, pf_ProblemDefinition&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>parse a problem definition specifically</td>
+</tr>
+<tr>
+<td><code>parseProblemValue</code></td>
+<td><code>static pf_Status parseProblemValue(const pf_JsonValue&amp; document, pf_ProblemDefinition&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>the same from a value</td>
+</tr>
+<tr>
+<td><code>parseUpdateText</code></td>
+<td><code>static pf_Status parseUpdateText(std::string_view jsonText, pf_ProblemUpdate&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>parse a spot update</td>
+</tr>
+<tr>
+<td><code>parseUpdateValue</code></td>
+<td><code>static pf_Status parseUpdateValue(const pf_JsonValue&amp; document, pf_ProblemUpdate&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>the same from a value</td>
+</tr>
+<tr>
+<td><code>parseCommandText</code></td>
+<td><code>static pf_Status parseCommandText(std::string_view jsonText, pf_ProblemCommand&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>parse a control command</td>
+</tr>
+<tr>
+<td><code>parseCommandValue</code></td>
+<td><code>static pf_Status parseCommandValue(const pf_JsonValue&amp; document, pf_ProblemCommand&amp; output, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>the same from a value</td>
+</tr>
+<tr>
+<td><code>readDocumentFile</code></td>
+<td><code>static pf_Status readDocumentFile(const std::string&amp; fileName, pf_ProblemInput_Document&amp; output, pf_ProblemInput_Report&amp; report, pf_ProblemInput_Options options = pf_ProblemInput_Options());</code></td>
+<td>"Read either a full problem or an update from a file"</td>
+</tr>
+<tr>
+<td><code>readProblemFile</code></td>
+<td><code>static pf_Status readProblemFile(const std::string&amp; fileName, pf_ProblemDefinition&amp; output, pf_ProblemInput_Report&amp; report, pf_ProblemInput_Options options = pf_ProblemInput_Options());</code></td>
+<td>read a definition from a file</td>
+</tr>
+<tr>
+<td><code>readUpdateFile</code></td>
+<td><code>static pf_Status readUpdateFile(const std::string&amp; fileName, pf_ProblemUpdate&amp; output, pf_ProblemInput_Report&amp; report, pf_ProblemInput_Options options = pf_ProblemInput_Options());</code></td>
+<td>read an update from a file</td>
+</tr>
+<tr>
+<td><code>readCommandFile</code></td>
+<td><code>static pf_Status readCommandFile(const std::string&amp; fileName, pf_ProblemCommand&amp; output, pf_ProblemInput_Report&amp; report, pf_ProblemInput_Options options = pf_ProblemInput_Options());</code></td>
+<td>read a command from a file</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>File</code> overloads take their options <strong>by value</strong> because the codec fills in
+<code>sourceRoot</code> from the file's own location before resolving anything the document
+references.</p>
+<p>A control command parses on its own terms. The header states it directly:
+"Control commands parse standalone: no problem definition is required in the
+same document, and none is consulted here. Cross-checks against a topology are
+<code>validateCommand</code>'s job."</p>
+<h2 id="writing-and-canonical-form">Writing and canonical form<a class="headerlink" href="#writing-and-canonical-form" title="Permanent link">&para;</a></h2>
+<p>Canonical JSON is what the content hash is taken over, so these are the calls
+that decide a revision's identity.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>toJson</code></td>
+<td><code>static pf_JsonValue toJson(const pf_ProblemDefinition&amp; problem);</code></td>
+<td>"Convert typed structures to their canonical JSON representation"</td>
+</tr>
+<tr>
+<td><code>toJson</code></td>
+<td><code>static pf_JsonValue toJson(const pf_ProblemUpdate&amp; update);</code></td>
+<td>the same for an update</td>
+</tr>
+<tr>
+<td><code>toJson</code></td>
+<td><code>static pf_JsonValue toJson(const pf_ProblemCommand&amp; command);</code></td>
+<td>the same for a command</td>
+</tr>
+<tr>
+<td><code>writeProblemText</code></td>
+<td><code>static std::string writeProblemText(const pf_ProblemDefinition&amp; problem, int indent = 2);</code></td>
+<td>canonical JSON as a string</td>
+</tr>
+<tr>
+<td><code>writeUpdateText</code></td>
+<td><code>static std::string writeUpdateText(const pf_ProblemUpdate&amp; update, int indent = 2);</code></td>
+<td>the same for an update</td>
+</tr>
+<tr>
+<td><code>writeCommandText</code></td>
+<td><code>static std::string writeCommandText(const pf_ProblemCommand&amp; command, int indent = 2);</code></td>
+<td>the same for a command</td>
+</tr>
+<tr>
+<td><code>writeProblemFile</code></td>
+<td><code>static pf_Status writeProblemFile(const std::string&amp; fileName, const pf_ProblemDefinition&amp; problem, bool overwrite = true, bool atomicWrite = true, int indent = 2);</code></td>
+<td>write a definition to a file</td>
+</tr>
+<tr>
+<td><code>writeUpdateFile</code></td>
+<td><code>static pf_Status writeUpdateFile(const std::string&amp; fileName, const pf_ProblemUpdate&amp; update, bool overwrite = true, bool atomicWrite = true, int indent = 2);</code></td>
+<td>write an update to a file</td>
+</tr>
+<tr>
+<td><code>writeCommandFile</code></td>
+<td><code>static pf_Status writeCommandFile(const std::string&amp; fileName, const pf_ProblemCommand&amp; command, bool overwrite = true, bool atomicWrite = true, int indent = 2);</code></td>
+<td>write a command to a file</td>
+</tr>
+</tbody>
+</table>
+<p>Defaulted fields are materialized in the canonical document rather than left
+implicit. The header states the consequence for the solver block: "a document
+that omits <code>solver</code> and one that states the role default emit the same bytes and
+therefore the same content hash."</p>
+<p>Optional top-level blocks work the other way, and each carries its own <code>present</code>
+flag. <code>pf_RunSpec</code>, <code>pf_ObservabilitySpec</code>, <code>pf_SolverGuarantee</code>,
+<code>pf_SolverSpeculation</code>, <code>pf_SolverCertification</code> and <code>pf_CatalogSpec</code> are
+"emitted into canonical JSON only when the document carried it, so every
+definition written before they existed canonicalizes to the bytes it always did
+and its <code>contentHash</code> does not move."</p>
+<h2 id="commands-against-a-topology">Commands against a topology<a class="headerlink" href="#commands-against-a-topology" title="Permanent link">&para;</a></h2>
+<p>Two calls answer the questions a command document cannot answer alone.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>validateCommand</code></td>
+<td><code>static pf_Status validateCommand(const pf_ProblemCommand&amp; command, const pf_ProblemDefinition&amp; problem, pf_ProblemInput_Report&amp; report);</code></td>
+<td>the cross-document rules: the command names this problem, every target exists, <code>start</code> and <code>request_results</code> address a master-side node</td>
+</tr>
+<tr>
+<td><code>expandTargets</code></td>
+<td><code>static std::vector&lt;std::string&gt; expandTargets(const pf_ProblemCommand&amp; command, const pf_ProblemDefinition&amp; problem);</code></td>
+<td>the ordered node list a command addresses</td>
+</tr>
+</tbody>
+</table>
+<p><code>expandTargets</code> is documented as pure — "it reads the definition and returns a
+list" — and its order is defined: each target's descendants are appended
+depth-first in pre-order when <code>applyToChildren</code> is set, and "duplicates are
+removed keeping first occurrence, so overlapping targets expand once."</p>
+<h2 id="identifiers-vocabulary-and-capability">Identifiers, vocabulary and capability<a class="headerlink" href="#identifiers-vocabulary-and-capability" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stableId</code></td>
+<td><code>static std::uint64_t stableId(const std::string&amp; problemId, const std::string&amp; elementKind, const std::string&amp; elementId) noexcept;</code></td>
+<td>"Deterministic nonzero module ID derived from problem, element kind, and stable element ID"</td>
+</tr>
+<tr>
+<td><code>toString</code></td>
+<td><code>static const char* toString(pf_ServiceRole value) noexcept;</code></td>
+<td>the wire spelling of an enum value; overloads exist for every enum on this page</td>
+</tr>
+<tr>
+<td><code>serviceRoleFromString</code></td>
+<td><code>static bool serviceRoleFromString(std::string_view text, pf_ServiceRole&amp; value) noexcept;</code></td>
+<td>parse a role name</td>
+</tr>
+<tr>
+<td><code>solverKindFromString</code></td>
+<td><code>static bool solverKindFromString(std::string_view text, pf_SolverKind&amp; value) noexcept;</code></td>
+<td>parse a solver kind</td>
+</tr>
+<tr>
+<td><code>solverEngineFromString</code></td>
+<td><code>static bool solverEngineFromString(std::string_view text, pf_SolverEngine&amp; value) noexcept;</code></td>
+<td>parse an engine name</td>
+</tr>
+<tr>
+<td><code>commandVerbFromString</code></td>
+<td><code>static bool commandVerbFromString(std::string_view text, pf_ProblemCommandVerb&amp; value) noexcept;</code></td>
+<td>parse a command verb</td>
+</tr>
+<tr>
+<td><code>defaultSolverEngineFor</code></td>
+<td><code>static pf_SolverEngine defaultSolverEngineFor(pf_ServiceRole role) noexcept;</code></td>
+<td>"The engine a role uses when 'solver' is absent"</td>
+</tr>
+<tr>
+<td><code>solverEngineIsExecutable</code></td>
+<td><code>static bool solverEngineIsExecutable(pf_SolverEngine engine) noexcept;</code></td>
+<td>"True for engines the current services can actually execute"</td>
+</tr>
+<tr>
+<td><code>solverKindIsExecutable</code></td>
+<td><code>static bool solverKindIsExecutable(pf_SolverKind kind) noexcept;</code></td>
+<td>"True when the current runtime can execute this solver KIND"</td>
+</tr>
+<tr>
+<td><code>solverEngineAllowedForRole</code></td>
+<td><code>static bool solverEngineAllowedForRole(pf_SolverEngine engine, pf_ServiceRole role) noexcept;</code></td>
+<td>"True when the engine may be selected for this role at all"</td>
+</tr>
+<tr>
+<td><code>serviceRoleIsMasterSide</code></td>
+<td><code>static bool serviceRoleIsMasterSide(pf_ServiceRole role) noexcept;</code></td>
+<td>whether the role speaks for a subtree</td>
+</tr>
+<tr>
+<td><code>masterRoleFor</code></td>
+<td><code>static pf_ServiceRole masterRoleFor(pf_DecompositionParadigm paradigm) noexcept;</code></td>
+<td>the master-side role a paradigm implies</td>
+</tr>
+<tr>
+<td><code>subproblemRoleFor</code></td>
+<td><code>static pf_ServiceRole subproblemRoleFor(pf_DecompositionParadigm paradigm) noexcept;</code></td>
+<td>the subproblem-side role a paradigm implies</td>
+</tr>
+</tbody>
+</table>
+<p><code>toString</code> has an overload for each of <code>pf_ProblemNodeRole</code>,
+<code>pf_DecompositionParadigm</code>, <code>pf_DecompositionBinding</code>, <code>pf_ServiceRole</code>,
+<code>pf_DataDistribution</code>, <code>pf_CouplingDiscoveryMode</code>, <code>pf_CouplingKind</code>,
+<code>pf_PromotionRole</code>, <code>pf_ProblemUpdateMode</code>, <code>pf_InterruptDirective</code>,
+<code>pf_SolverKind</code>, <code>pf_SolverEngine</code> and <code>pf_ProblemCommandVerb</code>.</p>
+<p><code>solverEngineIsExecutable</code> is not a compile-time constant for every engine. The
+header records that <code>cuopt</code> "is answered by a live probe" — "its adapter is
+compiled in unconditionally, and whether it can solve depends on a shared
+library and a CUDA device this build never links" — while every other engine is
+still decided at compile time. <code>solverKindIsExecutable</code> answers <code>gpu</code> through
+the same probe, "because this build's only GPU-capable adapter IS cuopt and a
+<code>gpu</code> kind is a request for it by capability rather than by name."</p>
+<p>The role defaults are stated in the header: <code>priceMaster</code> is DIP, <code>resourceMaster</code>
+is CBC, <code>priceSubproblem</code> is SYMPHONY, <code>resourceSubproblem</code> is CLP. Which
+engines a role <em>accepts</em>, as opposed to which it defaults to, is on
+<a href="../../../guide/problem-definitions/">Problem definitions</a>.</p>
+<h2 id="diagnostics">Diagnostics<a class="headerlink" href="#diagnostics" title="Permanent link">&para;</a></h2>
+<p>A report accumulates what the codec and the semantic validator found. It is a
+value: it is passed in, filled, and read back.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>warning</code></td>
+<td><code>void warning(std::string pointer, std::string code, std::string message);</code></td>
+<td>record a warning at a JSON Pointer</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>void error(std::string pointer, std::string code, std::string message);</code></td>
+<td>record an error at a JSON Pointer</td>
+</tr>
+<tr>
+<td><code>ok</code></td>
+<td><code>bool ok() const noexcept;</code></td>
+<td>no errors were recorded</td>
+</tr>
+<tr>
+<td><code>hasWarnings</code></td>
+<td><code>bool hasWarnings() const noexcept;</code></td>
+<td>at least one warning was recorded</td>
+</tr>
+<tr>
+<td><code>errorCount</code></td>
+<td><code>std::size_t errorCount() const noexcept;</code></td>
+<td>how many errors</td>
+</tr>
+<tr>
+<td><code>warningCount</code></td>
+<td><code>std::size_t warningCount() const noexcept;</code></td>
+<td>how many warnings</td>
+</tr>
+<tr>
+<td><code>diagnostics</code></td>
+<td><code>const std::vector&lt;pf_ProblemInput_Diagnostic&gt;&amp; diagnostics() const noexcept;</code></td>
+<td>every diagnostic, in the order recorded</td>
+</tr>
+<tr>
+<td><code>toText</code></td>
+<td><code>std::string toText() const;</code></td>
+<td>the human-readable rendering</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td><code>void clear() noexcept;</code></td>
+<td>discard everything recorded</td>
+</tr>
+</tbody>
+</table>
+<p>Each diagnostic carries four fields — <code>level</code>, <code>pointer</code>, <code>code</code> and <code>message</code> —
+where <code>level</code> is <code>pf_ProblemInput_DiagnosticLevel::Warning</code> or <code>::Error</code>.</p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<p><code>pf_ProblemInput_Options</code> is the one place a caller changes what parsing means.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>json</code></td>
+<td><code>pf_JsonParseOptions json;</code></td>
+<td>the JSON layer's own bounds</td>
+</tr>
+<tr>
+<td><code>sourceRoot</code></td>
+<td><code>std::string sourceRoot;</code></td>
+<td>the directory external references resolve against</td>
+</tr>
+<tr>
+<td><code>resolveExternalResources</code></td>
+<td><code>bool resolveExternalResources = true;</code></td>
+<td>whether file-backed model and data sources are read</td>
+</tr>
+<tr>
+<td><code>allowLegacyProblemPackage</code></td>
+<td><code>bool allowLegacyProblemPackage = true;</code></td>
+<td>whether a legacy package document may be imported</td>
+</tr>
+<tr>
+<td><code>rejectUnknownProperties</code></td>
+<td><code>bool rejectUnknownProperties = true;</code></td>
+<td>whether a property outside the schema is an error</td>
+</tr>
+<tr>
+<td><code>checkZimplMarkers</code></td>
+<td><code>bool checkZimplMarkers = true;</code></td>
+<td>whether the Zimpl marker rules run at parse time</td>
+</tr>
+<tr>
+<td><code>maxResourceBytes</code></td>
+<td><code>std::size_t maxResourceBytes = 16U * 1024U * 1024U;</code></td>
+<td>the ceiling on one resolved resource</td>
+</tr>
+<tr>
+<td><code>maxTopologyDepth</code></td>
+<td><code>std::size_t maxTopologyDepth = 64U;</code></td>
+<td>the deepest topology accepted</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-object-model">The object model<a class="headerlink" href="#the-object-model" title="Permanent link">&para;</a></h2>
+<p>A parsed definition is a tree of plain structs. The table names each one and
+what it holds; the field-level meaning of the document these mirror is on
+<a href="../../../guide/problem-definitions/">Problem definitions</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Struct</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pf_ProblemDefinition</code></td>
+<td>identity (<code>problemId</code>, <code>version</code>, <code>revision</code>, <code>contentHash</code>), <code>models</code>, <code>data</code>, <code>rootNodeId</code>, <code>nodes</code>, <code>boundaries</code>, <code>execution</code>, the optional <code>runSpec</code> / <code>observability</code> / <code>catalog</code> blocks, and <code>canonicalDocument</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemNodeSpec</code></td>
+<td>one node: <code>id</code>, <code>role</code>, <code>level</code>, and its <code>services</code> keyed by service role</td>
+</tr>
+<tr>
+<td><code>pf_ProblemServiceBindingSpec</code></td>
+<td>one node's binding for one role: <code>modelRef</code>, <code>dataRefs</code>, <code>placement</code>, <code>solver</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemBoundarySpec</code></td>
+<td>one parent/child edge: <code>paradigm</code>, <code>binding</code>, <code>couplingMode</code>, <code>couplingDeclarations</code></td>
+</tr>
+<tr>
+<td><code>pf_CouplingDeclaration</code></td>
+<td>one crossing symbol: <code>couplingKey</code>, <code>kind</code>, <code>parentSymbol</code>, <code>childSymbol</code>, <code>ownerNodeId</code>, <code>valueType</code>, optional <code>promotion</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemModelSpec</code> / <code>pf_ProblemDataSpec</code></td>
+<td>a named model or data resource and its source</td>
+</tr>
+<tr>
+<td><code>pf_ProblemTextSource</code></td>
+<td><code>inline</code> or <code>file</code>, the resolved bytes, and the <code>sha256</code> that pins them</td>
+</tr>
+<tr>
+<td><code>pf_PlacementSpec</code></td>
+<td>where a role's solve runs: <code>Explicit</code>, <code>Query</code>, <code>Spawn</code> or <code>Auto</code>, exactly one populated</td>
+</tr>
+<tr>
+<td><code>pf_PlacementQuery</code></td>
+<td>the registry selector: <code>type</code>, <code>count</code>, <code>requireCapabilities</code>, <code>availableOnly</code>, <code>selection</code></td>
+</tr>
+<tr>
+<td><code>pf_SolverSpec</code></td>
+<td><code>kind</code>, <code>engine</code>, opaque <code>options</code>, and the optional <code>guarantee</code> and <code>speculation</code> blocks</td>
+</tr>
+<tr>
+<td><code>pf_SolverGuarantee</code></td>
+<td>what an answer must certify (<code>requirement</code>, <code>onUncertifiedAction</code>, optional fallback engine) and the <code>certification</code> policy</td>
+</tr>
+<tr>
+<td><code>pf_SolverCertification</code></td>
+<td>when an unproven claim is certified: <code>mode</code>, <code>sampleRate</code>, <code>seed</code>, and the optional rider-timeout fields</td>
+</tr>
+<tr>
+<td><code>pf_SolverSpeculation</code></td>
+<td>the column farm: <code>columns</code>, <code>epsilon</code>, <code>seed</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemExecutionSpec</code></td>
+<td><code>maxIterations</code>, <code>timeLimitSeconds</code>, <code>convergenceTolerance</code>, <code>innerSolvePolicy</code>, <code>innerIterationBound</code>, and <code>results</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemResultsSpec</code></td>
+<td><code>returnMode</code>, <code>output</code>, <code>waitSeconds</code>, <code>variableFilter</code>, <code>interimProgress</code>, <code>returnScopes</code></td>
+</tr>
+<tr>
+<td><code>pf_RunSpec</code></td>
+<td>repeated execution: <code>mode</code>, <code>count</code>, <code>intervalSeconds</code>, <code>overlap</code>, <code>warmStart</code>, <code>stop</code></td>
+</tr>
+<tr>
+<td><code>pf_ObservabilitySpec</code></td>
+<td>result streaming and log display policy</td>
+</tr>
+<tr>
+<td><code>pf_CatalogSpec</code></td>
+<td>"INERT identity metadata for an application catalogue: who this definition is, not what it does"</td>
+</tr>
+<tr>
+<td><code>pf_ProblemUpdate</code></td>
+<td>a patch against an exact base: <code>baseRevision</code>, <code>baseContentHash</code>, <code>mode</code>, <code>interrupt</code>, <code>payload</code></td>
+</tr>
+<tr>
+<td><code>pf_ProblemCommand</code></td>
+<td>a verb, its <code>targets</code>, <code>applyToChildren</code>, and an optional <code>baseRevision</code> pin</td>
+</tr>
+</tbody>
+</table>
+<p>Six lookups on <code>pf_ProblemDefinition</code> save a caller writing its own traversal:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>findNode</code></td>
+<td><code>const pf_ProblemNodeSpec* findNode(const std::string&amp; nodeId) const noexcept;</code></td>
+<td>one node by id, or <code>nullptr</code></td>
+</tr>
+<tr>
+<td><code>findBoundary</code></td>
+<td><code>const pf_ProblemBoundarySpec* findBoundary(const std::string&amp; boundaryId) const noexcept;</code></td>
+<td>one boundary by id</td>
+</tr>
+<tr>
+<td><code>findModel</code></td>
+<td><code>const pf_ProblemModelSpec* findModel(const std::string&amp; modelId) const noexcept;</code></td>
+<td>one model resource by id</td>
+</tr>
+<tr>
+<td><code>findData</code></td>
+<td><code>const pf_ProblemDataSpec* findData(const std::string&amp; dataId) const noexcept;</code></td>
+<td>one data resource by id</td>
+</tr>
+<tr>
+<td><code>childBoundaries</code></td>
+<td><code>std::vector&lt;const pf_ProblemBoundarySpec*&gt; childBoundaries(const std::string&amp; nodeId) const;</code></td>
+<td>the edges down from a node</td>
+</tr>
+<tr>
+<td><code>parentBoundary</code></td>
+<td><code>const pf_ProblemBoundarySpec* parentBoundary(const std::string&amp; nodeId) const noexcept;</code></td>
+<td>the edge up from a node</td>
+</tr>
+</tbody>
+</table>
+<p>Several blocks in this model are valid to author and not executable by the
+current build; a <code>spawn</code> or <code>auto</code> placement, a <code>gpu</code> kind and a <code>runSpec</code> mode
+other than <code>once</code> are the header's own examples. Each is carried through the
+schema and refused at submit rather than silently ignored, and the refusal names
+the pass that retires it.</p>
+<h2 id="owning-the-active-definition">Owning the active definition<a class="headerlink" href="#owning-the-active-definition" title="Permanent link">&para;</a></h2>
+<p><code>pf_ProblemInput_Manager</code> is the transactional owner of one problem definition.
+Its header states the guarantee: it is a "Thread-safe transactional owner of the
+active problem definition", and updates "are applied to a copy, fully re-parsed
+and re-validated, and become visible atomically only after validation succeeds."</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constructor</td>
+<td><code>explicit pf_ProblemInput_Manager(std::size_t maxRememberedUpdateIds = 4096U);</code></td>
+<td>the bounded replay-rejection window</td>
+</tr>
+<tr>
+<td><code>submitText</code></td>
+<td><code>pf_Status submitText(std::string_view jsonText, pf_ProblemInput_Commit&amp; commit, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>submit a document as text</td>
+</tr>
+<tr>
+<td><code>submitValue</code></td>
+<td><code>pf_Status submitValue(const pf_JsonValue&amp; document, pf_ProblemInput_Commit&amp; commit, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>submit a parsed value</td>
+</tr>
+<tr>
+<td><code>submitFile</code></td>
+<td><code>pf_Status submitFile(const std::string&amp; fileName, pf_ProblemInput_Commit&amp; commit, pf_ProblemInput_Report&amp; report, pf_ProblemInput_Options options = pf_ProblemInput_Options());</code></td>
+<td>submit from a file</td>
+</tr>
+<tr>
+<td><code>submitProblem</code></td>
+<td><code>pf_Status submitProblem(const pf_ProblemDefinition&amp; problem, pf_ProblemInput_Commit&amp; commit, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>submit an already-typed definition</td>
+</tr>
+<tr>
+<td><code>applyUpdate</code></td>
+<td><code>pf_Status applyUpdate(const pf_ProblemUpdate&amp; update, pf_ProblemInput_Commit&amp; commit, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options());</code></td>
+<td>apply a spot update and commit it</td>
+</tr>
+<tr>
+<td><code>validateUpdateAgainstRuntime</code></td>
+<td><code>pf_Status validateUpdateAgainstRuntime(const pf_ProblemUpdate&amp; update, const pf_RuntimeTopologySummary&amp; summary, pf_ProblemInput_Report&amp; report, const pf_ProblemInput_Options&amp; options = pf_ProblemInput_Options()) const;</code></td>
+<td>decide whether an update may be applied while services are running, <strong>without</strong> applying it</td>
+</tr>
+<tr>
+<td><code>snapshot</code></td>
+<td><code>std::shared_ptr&lt;const pf_ProblemDefinition&gt; snapshot() const;</code></td>
+<td>the active definition, immutable</td>
+</tr>
+<tr>
+<td><code>revision</code></td>
+<td><code>std::uint64_t revision() const noexcept;</code></td>
+<td>the active revision number</td>
+</tr>
+<tr>
+<td><code>contentHash</code></td>
+<td><code>std::string contentHash() const;</code></td>
+<td>the active revision's content hash</td>
+</tr>
+<tr>
+<td><code>waitForRevision</code></td>
+<td><code>std::shared_ptr&lt;const pf_ProblemDefinition&gt; waitForRevision(std::uint64_t minimumRevision, std::chrono::milliseconds timeout) const;</code></td>
+<td>"Wait until a committed snapshot reaches at least minimumRevision"</td>
+</tr>
+<tr>
+<td><code>setObserver</code></td>
+<td><code>void setObserver(Observer observer);</code></td>
+<td>install the commit callback</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td><code>void clear();</code></td>
+<td>drop the active definition</td>
+</tr>
+</tbody>
+</table>
+<p><code>Observer</code> is <code>std::function&lt;void(const pf_ProblemInput_Commit&amp;)&gt;</code>. The header
+states the callback contract: notifications "are serialized in commit order and
+invoked outside the state mutex", and "a callback may safely call back into the
+manager; such nested notifications are queued behind the current one."</p>
+<p>A commit describes what changed. <code>pf_ProblemInput_Commit</code> carries the new
+<code>snapshot</code>, the previous and new revision and content hash, <code>fullReplacement</code>,
+<code>requiresSolveInterrupt</code>, the <code>interruptDirective</code> the update asked for, and a
+<code>pf_ProblemInput_ChangeSet</code>. The change set classifies the diff — whether
+topology, model logic, data, placement, execution or metadata changed — lists
+the affected node, boundary, model and data ids, and carries the JSON Pointers
+that moved.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The manager classifies and reports; it does not act. Its header is explicit:
+"The manager does not itself stop a solve; <code>requiresSolveInterrupt</code> tells the
+future generalized app whether it should ask its solve controller to do so."</p>
+</div>
+<h3 id="updating-a-running-problem">Updating a running problem<a class="headerlink" href="#updating-a-running-problem" title="Permanent link">&para;</a></h3>
+<p><code>validateUpdateAgainstRuntime</code> answers the question <code>applyUpdate</code> would answer,
+against a copy that is then discarded. Nothing is committed and no observer
+fires whatever the verdict, "so a caller may ask this question of a live manager
+freely." The optimistic-concurrency check still fires first: an update built
+against a stale revision is refused before any runtime rule is consulted.</p>
+<p>Four rules are then checked against the supplied runtime summary. The header
+names them:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Fires when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>update.running_paradigm_change</code></td>
+<td>a boundary's paradigm or binding changed and its child subtree holds a <code>Solving</code> or <code>Paused</code> node</td>
+</tr>
+<tr>
+<td><code>update.running_placement_change</code></td>
+<td>a placement changed on such a subtree</td>
+</tr>
+<tr>
+<td><code>update.running_solver_change</code></td>
+<td>a solver engine or kind changed on such a subtree</td>
+</tr>
+<tr>
+<td><code>update.running_node_removal</code></td>
+<td>a node with running descendants was removed</td>
+</tr>
+</tbody>
+</table>
+<p>The first three are waived by <code>interrupt: always</code> — "the operator has said to
+interrupt the solve, so disturbing it is the instruction rather than the
+accident." The fourth is not waivable: "interrupting a solve still leaves the
+removed node's descendants with no parent to report to."</p>
+<p>All four gate structure rather than content, and all four are asked of the
+target's own subtree rather than of the run. Every change to models, data or
+execution policy passes them, so it is legal against a target that is solving or
+paused; a structural change is refused only when the target's own subtree holds
+such a node, whatever the rest of the hierarchy is doing.</p>
+<h2 id="json-values">JSON values<a class="headerlink" href="#json-values" title="Permanent link">&para;</a></h2>
+<p><code>pf_JsonValue</code> is the value type the whole surface is expressed in. Its header
+describes it as "A small, dependency-free JSON value and codec" implementing
+"strict RFC 8259 parsing, deterministic serialization, JSON Pointer (RFC 6901),
+JSON Patch (RFC 6902), and JSON Merge Patch (RFC 7396)".</p>
+<p>Its type is one of <code>Null</code>, <code>Boolean</code>, <code>SignedInteger</code>, <code>UnsignedInteger</code>,
+<code>Number</code>, <code>String</code>, <code>Array</code> or <code>Object</code>, and the accessors follow that list:
+<code>type()</code>, <code>typeName()</code>, the <code>isX()</code> predicates, the throwing <code>asX()</code> accessors,
+the non-throwing <code>tryGetX()</code> accessors, <code>size()</code>, <code>empty()</code>, <code>find()</code>,
+<code>operator[]</code> and <code>at()</code>.</p>
+<p>Three members carry rules worth stating:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>findPointer</code></td>
+<td><code>const pf_JsonValue* findPointer(std::string_view pointer) const noexcept;</code></td>
+<td>"Resolve an RFC 6901 JSON Pointer. An empty pointer addresses this value. nullptr is returned for malformed pointers or missing targets"</td>
+</tr>
+<tr>
+<td><code>dump</code></td>
+<td><code>std::string dump(int indent = 2) const;</code></td>
+<td>"Serialize deterministically. Object keys are emitted in lexical order. indent &lt; 0 produces compact JSON; indent &gt;= 0 produces pretty JSON"</td>
+</tr>
+<tr>
+<td><code>operator==</code></td>
+<td><code>friend bool operator==(const pf_JsonValue&amp; lhs, const pf_JsonValue&amp; rhs) noexcept;</code></td>
+<td>structural equality</td>
+</tr>
+</tbody>
+</table>
+<p><code>pf_Json</code> is the codec beside it, and every call returns <code>pf_Status</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>parse</code></td>
+<td><code>static pf_Status parse(std::string_view input, pf_JsonValue&amp; output, const pf_JsonParseOptions&amp; options = pf_JsonParseOptions());</code></td>
+<td>"Parse strict JSON from memory"</td>
+</tr>
+<tr>
+<td><code>readFile</code></td>
+<td><code>static pf_Status readFile(const std::string&amp; fileName, pf_JsonValue&amp; output, const pf_JsonParseOptions&amp; options = pf_JsonParseOptions());</code></td>
+<td>"Parse a JSON file with a bounded size"</td>
+</tr>
+<tr>
+<td><code>writeFile</code></td>
+<td><code>static pf_Status writeFile(const std::string&amp; fileName, const pf_JsonValue&amp; value, bool overwrite = true, bool atomicWrite = true, int indent = 2);</code></td>
+<td>write JSON to a file; when <code>atomicWrite</code> is true "a temporary sibling file is flushed first and then renamed into place"</td>
+</tr>
+<tr>
+<td><code>applyPatch</code></td>
+<td><code>static pf_Status applyPatch(pf_JsonValue&amp; target, const pf_JsonValue&amp; patch, std::vector&lt;std::string&gt;* changedPointers = nullptr);</code></td>
+<td>"Apply an RFC 6902 JSON Patch transactionally to target"</td>
+</tr>
+<tr>
+<td><code>applyMergePatch</code></td>
+<td><code>static pf_Status applyMergePatch(pf_JsonValue&amp; target, const pf_JsonValue&amp; patch, std::vector&lt;std::string&gt;* changedPointers = nullptr);</code></td>
+<td>"Apply RFC 7396 JSON Merge Patch to target"</td>
+</tr>
+<tr>
+<td><code>escapePointerToken</code></td>
+<td><code>static std::string escapePointerToken(std::string_view token);</code></td>
+<td>"Escape one JSON Pointer token (RFC 6901)"</td>
+</tr>
+<tr>
+<td><code>decodePointer</code></td>
+<td><code>static pf_Status decodePointer(std::string_view pointer, std::vector&lt;std::string&gt;&amp; tokens);</code></td>
+<td>"Decode a JSON Pointer into unescaped tokens"</td>
+</tr>
+<tr>
+<td><code>contentHash</code></td>
+<td><code>static std::string contentHash(const pf_JsonValue&amp; value);</code></td>
+<td>"SHA-256 of deterministic compact JSON, returned as 64 lowercase hex digits"</td>
+</tr>
+</tbody>
+</table>
+<p>Parsing is bounded, and the bounds are visible to the caller.
+<code>pf_JsonParseOptions</code> carries <code>maxInputBytes</code> (16 MiB), <code>maxDepth</code> (128),
+<code>maxContainerEntries</code> (1,000,000) and <code>rejectDuplicateObjectKeys</code>, which
+defaults to <code>true</code>.</p>
+<h2 id="content-hashing">Content hashing<a class="headerlink" href="#content-hashing" title="Permanent link">&para;</a></h2>
+<p><code>pf_Hash</code> is two functions, described in its header as "Small, dependency-free
+hashing helpers used by the generalized problem-input layer. Hashes are
+lowercase hexadecimal strings."</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Signature (verbatim)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sha256</code></td>
+<td><code>std::string sha256(std::string_view input);</code></td>
+<td>"Return the SHA-256 digest of input as 64 lowercase hexadecimal digits"</td>
+</tr>
+<tr>
+<td><code>isSha256</code></td>
+<td><code>bool isSha256(std::string_view value) noexcept;</code></td>
+<td>"True only for a canonical 64-character lowercase hexadecimal SHA-256"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-refusal-surface">The refusal surface<a class="headerlink" href="#the-refusal-surface" title="Permanent link">&para;</a></h2>
+<p>Every refusal is a <code>(code, pointer, message)</code> triple, and the code is the part a
+program matches on. The authoring reference states the rule plainly: match on
+the code, edit at the pointer, and "never key a repair on the message's wording,
+which is human text and may be reworded between builds."</p>
+<div class="highlight"><pre><span></span><code>error [run_spec.count_required] /runSpec/count: Run mode 'counted' requires 'count'.
+       ^ code                    ^ pointer      ^ message
+</code></pre></div>
+<p>Two gates produce codes. The <strong>codec</strong> is what <code>pf spec validate</code> runs; the
+<strong>reviewer</strong> is the same with <code>--deep</code>, and it compiles the model. The codec runs
+first, so a document it refuses never reaches the reviewer.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Gate</th>
+<th>Pointer discipline</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>schema.*</code></td>
+<td>codec</td>
+<td>the offending node</td>
+<td>shape: required properties, types, enums, bounds, unknown properties, identifier patterns, hash format, unsupported and legacy versions</td>
+</tr>
+<tr>
+<td><code>topology.*</code></td>
+<td>codec</td>
+<td>the node or boundary at fault</td>
+<td>the tree: root, parents, cycles, reachability, levels, roles, downward paradigm uniformity, depth and edge bounds</td>
+</tr>
+<tr>
+<td><code>boundary.*</code></td>
+<td>codec</td>
+<td>the boundary or one of its endpoints</td>
+<td>one edge: paradigm/binding legality, the master- and subproblem-side services it requires, and two unsupported shapes</td>
+</tr>
+<tr>
+<td><code>coupling.*</code></td>
+<td>codec, two from the reviewer</td>
+<td>the declaration</td>
+<td>who owns what crosses: duplicate keys, ownership outside the boundary, unserializable symbols, and (reviewer) symbols that resolve on neither compiled side</td>
+</tr>
+<tr>
+<td><code>placement.*</code></td>
+<td>codec, one from the reviewer</td>
+<td>the placement block</td>
+<td>empty or nested <code>auto</code> lists; and the deep gate's requirement that placements be explicit</td>
+</tr>
+<tr>
+<td><code>run_spec.*</code></td>
+<td>codec</td>
+<td><code>/runSpec/...</code></td>
+<td>count and interval, each required by its mode and refused beside any other</td>
+</tr>
+<tr>
+<td><code>solver.*</code></td>
+<td>codec</td>
+<td>the solver block</td>
+<td>engine/role legality, guarantee fallbacks, ray capability, farm legality, certification sampling</td>
+</tr>
+<tr>
+<td><code>problem.*</code>, <code>results.*</code>, <code>catalog.*</code></td>
+<td>codec</td>
+<td>the field named</td>
+<td>integer recourse engines; <code>returnScopes</code> entries that name no node or no master; a catalog id that is not a stable id</td>
+</tr>
+<tr>
+<td><code>zimpl.*</code></td>
+<td>codec, then reviewer</td>
+<td>the model source</td>
+<td>first the marker and include rules the codec checks without compiling; then staging and compile failures, whose <code>cause=</code> token is the repair</td>
+</tr>
+<tr>
+<td><code>monolith.*</code></td>
+<td>reviewer, <code>--monolith</code> only</td>
+<td>the node that decides the shape</td>
+<td>the assembler has no rule for this shape and refuses rather than approximating it</td>
+</tr>
+<tr>
+<td><code>coverage.*</code></td>
+<td>reviewer</td>
+<td>the topology node concerned</td>
+<td><strong>informational, never a defect</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Three classes of code are not defects and should not be repaired as if they
+were.</p>
+<p>A code whose suffix is <code>_not_executed</code> means the document is <strong>valid</strong> and states
+something this build does not execute yet; the message names the pass that
+retires the refusal. The authoring reference is emphatic about the wrong
+response: "Never rewrite a ratchet refusal into an approximation of what was
+asked for."</p>
+<p><code>coverage.unproven_shape</code> is an advisory. The definition is valid and
+executable; one dimension of it has never been run end to end by a test lane.
+The line begins <code>warning</code>, the exit status is unaffected, and it appears only
+under <code>--deep</code>. Repairing it by editing the document toward a proven shape
+"changes what you asked for in order to quiet a message that says nothing is
+wrong."</p>
+<p>Some <code>solver.*</code> codes are warnings rather than errors — a fallback engine stated
+beside <code>action: refuse</code>, a seed beside a mode with nothing to randomize, a
+<code>kind: gpu</code> assertion no document can settle.</p>
+<p>Two reviewer codes deserve a reader's attention because they describe models
+that compile and then answer the wrong question:
+<code>zimpl.row_spans_two_children</code> and <code>zimpl.objective_leaks_sibling_columns</code> are
+labelled <strong>silent defect</strong> in the authoring reference, because in each case the
+model "solves a different problem and reports <code>optimal</code>".</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 PlasticFog Technology Corp · Pre-release — August 2026 · License: to be announced
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
