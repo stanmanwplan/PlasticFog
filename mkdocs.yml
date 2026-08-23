@@ -1,0 +1,198 @@
+site_name: PlasticFog
+site_description: "A distributed framework for nested, mixed-paradigm decomposition optimization"
+site_url: https://stanmanwplan.github.io/PlasticFog/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+copyright: "© 2026 PlasticFog Technology Corp · Pre-release — August 2026 · License: to be announced"
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+validation:
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+  nav:
+    omitted_files: warn
+    not_found: warn
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Your first problem: getting-started/first-problem.md
+  - User Guide:
+      - Workflow overview: guide/workflow.md
+      - Workbench reference: guide/workbench.md
+      - Problem definitions: guide/problem-definitions.md
+      - Zimpl reference: guide/zimpl.md
+      - Authoring with an LLM: guide/llm-authoring.md
+  - Architecture:
+      - Application flow: architecture/app-flow.md
+      - Services & control plane: architecture/services.md
+      - State machine: architecture/state-machine.md
+      - Decomposition paradigms: architecture/decomposition.md
+  - Speculative Farming:
+      - Overview: speculative-farming/index.md
+      - Using speculative farming: speculative-farming/using.md
+      - Theory: speculative-farming/theory.md
+      - Theory topics:
+          - Column generation & pricing: speculative-farming/theory/column-generation.md
+          - First-order LP & inexactness: speculative-farming/theory/first-order-lp.md
+          - Proof debt & certification: speculative-farming/theory/proof-debt.md
+          - K-exchange farming: speculative-farming/theory/k-exchange.md
+      - Competitive analysis: speculative-farming/competitive.md
+      - Approaches:
+          - Plasmo.jl: speculative-farming/competitive/plasmo.md
+          - Coluna.jl: speculative-farming/competitive/coluna.md
+          - SDDP.jl: speculative-farming/competitive/sddp.md
+          - Scenario decomposition frameworks: speculative-farming/competitive/scenario-decomposition.md
+          - GPU-first solvers: speculative-farming/competitive/gpu-first.md
+          - Monolithic solvers: speculative-farming/competitive/monolithic.md
+      - Testing: speculative-farming/testing.md
+  - Reference:
+      - API:
+          - Overview: reference/api/index.md
+          - Problem input: reference/api/problem-input.md
+          - Control API: reference/api/control.md
+          - Results: reference/api/results.md
+      - Data & files:
+          - Overview: reference/data/index.md
+          - Schemas: reference/data/schemas.md
+          - Files & artifacts: reference/data/artifacts.md
+  - Quality & Testing:
+      - Philosophy & methodology: quality/index.md
+      - Engineering practices: quality/practices.md
+      - Test harness & fixtures: quality/tests/harness.md
+      - Test index: quality/tests/index.md
+      - Unit tests:
+          # DC0-UNIT-PAGES-BEGIN
+          - pf_BendersCuts_Tests: quality/tests/unit/benderscuts.md
+          - pf_BendersMaster_Tests: quality/tests/unit/bendersmaster.md
+          - pf_BlockPlan_Tests: quality/tests/unit/blockplan.md
+          - pf_Catalog_Tests: quality/tests/unit/catalog.md
+          - pf_ColumnVerifier_Tests: quality/tests/unit/columnverifier.md
+          - pf_Commands_Tests: quality/tests/unit/commands.md
+          - pf_Conductor_Tests: quality/tests/unit/conductor.md
+          - pf_Conductor_LogRouter_Tests: quality/tests/unit/conductor-logrouter.md
+          - pf_Conductor_RunScheduler_Tests: quality/tests/unit/conductor-runscheduler.md
+          - pf_Conductor_Supervisor_Tests: quality/tests/unit/conductor-supervisor.md
+          - pf_DeepCheck_Tests: quality/tests/unit/deepcheck.md
+          - pf_EngineCuOpt_Loader_Tests: quality/tests/unit/enginecuopt-loader.md
+          - pf_EngineHighs_MathGate_Tests: quality/tests/unit/enginehighs-mathgate.md
+          - pf_EngineHighs_Parity_Tests: quality/tests/unit/enginehighs-parity.md
+          - pf_FailurePolicy_Tests: quality/tests/unit/failurepolicy.md
+          - pf_Graph_Tests: quality/tests/unit/graph.md
+          - pf_MidPricing_Tests: quality/tests/unit/midpricing.md
+          - pf_MonolithAssembler_Tests: quality/tests/unit/monolithassembler.md
+          - pf_Mps2English_Tests: quality/tests/unit/mps2english.md
+          - pf_ProblemInput_Tests: quality/tests/unit/probleminput.md
+          - pf_ProblemInput_Adversarial_Tests: quality/tests/unit/probleminput-adversarial.md
+          - pf_RefusalInventory_Tests: quality/tests/unit/refusalinventory.md
+          - pf_RefusalInventory_Engines_Tests: quality/tests/unit/refusalinventory-engines.md
+          - pf_RefusalInventory_Workbench_Tests: quality/tests/unit/refusalinventory-workbench.md
+          - pf_ReplyTable_Tests: quality/tests/unit/replytable.md
+          - pf_ResourceDrive_Tests: quality/tests/unit/resourcedrive.md
+          - pf_ResourceEnvelope_Types_Tests: quality/tests/unit/resourceenvelope-types.md
+          - pf_ResponseTable_Tests: quality/tests/unit/responsetable.md
+          - pf_Results_Types_Tests: quality/tests/unit/results-types.md
+          - pf_ServiceIdManager_Tests: quality/tests/unit/serviceidmanager.md
+          - pf_ServicesRepo_Tests: quality/tests/unit/servicesrepo.md
+          - pf_ServicesRepo_Schema_Tests: quality/tests/unit/servicesrepo-schema.md
+          - pf_SolverEngine_Tests: quality/tests/unit/solverengine.md
+          - pf_SolverStateMachine_Tests: quality/tests/unit/solverstatemachine.md
+          - pf_SpeculationPrng_Tests: quality/tests/unit/speculationprng.md
+          - pf_StagingPlan_Tests: quality/tests/unit/stagingplan.md
+          - pf_VerbAttachment_Tests: quality/tests/unit/verbattachment.md
+          - pf_ZimplCompiler_Tests: quality/tests/unit/zimplcompiler.md
+          - pf_ZimplRegistry_Tests: quality/tests/unit/zimplregistry.md
+          - pf_ZimplStaging_Tests: quality/tests/unit/zimplstaging.md
+          # DC0-UNIT-PAGES-END
+      - End-to-end tests:
+          # DC0-E2E-PAGES-BEGIN
+          - "D1 — engines, pfe006-debt": quality/tests/e2e/d1-engines-pfe006-debt.md
+          - "E1 — engines, all": quality/tests/e2e/e1-engines-all.md
+          - "F1 — engines, pfe006-farm": quality/tests/e2e/f1-engines-pfe006-farm.md
+          - "I1 — inline": quality/tests/e2e/i1-inline.md
+          - "K1 — engines, pfe006-k1": quality/tests/e2e/k1-engines-pfe006-k1.md
+          - "L1 — pf001": quality/tests/e2e/l1-scenario-pf001.md
+          - "L2 — pf002": quality/tests/e2e/l2-scenario-pf002.md
+          - "L3 — generalized": quality/tests/e2e/l3-generalized.md
+          - "L4 — reuse": quality/tests/e2e/l4-reuse.md
+          - "L5 — pf002, degrade sub2": quality/tests/e2e/l5-scenario-pf002-degrade-sub2.md
+          - "L6 — pf002, omit sub2": quality/tests/e2e/l6-scenario-pf002-omit-sub2.md
+          - "L7 — nested": quality/tests/e2e/l7-nested.md
+          - "L8 — resource": quality/tests/e2e/l8-resource.md
+          - "S1 — engines, pfe006-sampled": quality/tests/e2e/s1-engines-pfe006-sampled.md
+          - "V1 — nested, command variant": quality/tests/e2e/v1-nested-command-variant.md
+          - "V2 — nested, update lane": quality/tests/e2e/v2-nested-update-lane.md
+          - "V3 — resource, degrade robot_b": quality/tests/e2e/v3-resource-degrade-robot-b.md
+          - "V4 — nested, mixed lane": quality/tests/e2e/v4-nested-mixed-lane.md
+          - "V5 — nested mixed, degrade robot_r1": quality/tests/e2e/v5-nested-mixed-degrade.md
+          - "V6 — nested, degrade C1 substitute": quality/tests/e2e/v6-nested-degrade-substitute.md
+          - "V7 — nested, degrade C1 abort": quality/tests/e2e/v7-nested-degrade-abort.md
+          - "V8 — nested, scopes lane": quality/tests/e2e/v8-nested-scopes-lane.md
+          - "W1 — workbench": quality/tests/e2e/w1-workbench.md
+          - "W2 — workbench, wb-spawn": quality/tests/e2e/w2-workbench-spawn.md
+          - "W3 — workbench, wb-discover": quality/tests/e2e/w3-workbench-discover.md
+          - "W4 — workbench, wb-auto": quality/tests/e2e/w4-workbench-auto.md
+          - "W5 — workbench, wb-repeat": quality/tests/e2e/w5-workbench-repeat.md
+          - "W6 — workbench, wb-continuous": quality/tests/e2e/w6-workbench-continuous.md
+          - "W7 — workbench, wb-results": quality/tests/e2e/w7-workbench-results.md
+          - "W8 — workbench, wb-logs": quality/tests/e2e/w8-workbench-logs.md
+          - "X1 — engines, pfe006-escalate": quality/tests/e2e/x1-engines-pfe006-escalate.md
+          - "Z1 — pf001 under the Zimpl CLI backend": quality/tests/e2e/z1-zimpl-cli-pf001.md
+          # DC0-E2E-PAGES-END
+  - Roadmap:
+      - Upcoming features: roadmap/index.md
