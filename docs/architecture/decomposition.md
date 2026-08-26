@@ -51,6 +51,31 @@ never constructed. **SYMPHONY**, **CBC**, **CLP**, **HiGHS** and **NVIDIA
 cuOpt** are engines — they solve the LPs and MIPs a decomposition poses at a
 master or at a block, and none of them performs any decomposition itself.
 
+## One bound, two representations
+
+Price-directed methods in DIP share a single underlying object. Splitting the
+constraints into a tractable relaxation and a set of complicating rows defines
+the convex hull of the relaxation's integer points; the improved bound every
+method below computes is the optimum over that hull intersected with the
+complicating rows. What varies is how the hull is represented.
+
+Inner methods build it from the inside, as convex combinations of extreme
+points the subproblem oracle proposes — Dantzig–Wolfe column generation is the
+primal form and Lagrangian relaxation its dual. Outer methods build it from the
+outside, as an accumulation of valid inequalities, using the same oracle to
+separate: a point that cannot be expressed as a convex combination of the
+hull's points yields a certificate, and the certificate is a cut.
+
+The two arrive at the same bound, and the hybrids run both at once — which is
+what the names in DIP mean. Price-and-cut adds outer cuts to the inner master;
+relax-and-cut adds them to the Lagrangian; the pure cutting-plane method is the
+outer method alone. PlasticFog's shipped price-directed path is DIP's
+price-and-cut; the outer-only realization exists in DIP and is not reachable
+through a problem definition today.
+
+None of this is Benders: the outer method here works the same structural split
+as column generation, while Benders decomposes along a different one.
+
 ## Price-directed: Dantzig–Wolfe
 
 `paradigm: price_directed`, `binding: dantzig_wolfe` — the two fields a
