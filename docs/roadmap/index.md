@@ -117,9 +117,14 @@ making its refusals derivable rather than restated.
 - **A remote mode.** The cuOpt adapter is in-process only.
 - **Multi-GPU.** The current probe answers "is there a device", not how many and
   not which — so this is a placement question as much as an engine one.
-- **Warm start.** No engine in the registry honours a warm start today.
-  Honouring one means holding solver state across rounds and giving up the
-  fresh-instance rule, which is a design decision rather than a setting.
+- **Warm start.** One site honours a warm start today: the Benders LP master
+  holds one solver across the loop and resolves after the first round through
+  `clp`, so a long loop does not pay for a cold solve each time. Every other
+  call passes cold. `cbc`, `symphony` and `highs` report no warm start — cbc
+  hands back no owned interface at all, which is the fresh-instance rule — and
+  `cuopt` accepts the flag and ignores it. Widening it past that one site means
+  holding solver state across rounds where nothing does, which is a design
+  decision rather than a setting.
 
 ### Workbench
 

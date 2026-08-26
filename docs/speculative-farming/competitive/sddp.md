@@ -20,7 +20,7 @@ structure — hydro-thermal scheduling above all.
 
 ## Where it overlaps
 
-Nested resource-directed decomposition. PlasticFog's Benders paradigm passes an
+Nested decomposition through a mid. PlasticFog's Benders paradigm passes an
 allocation down and receives a cut back, and its **mid** nodes are simultaneously
 a master to their children and a subproblem to their parent — the same nesting
 shape SDDP.jl's policy graph expresses stagewise.

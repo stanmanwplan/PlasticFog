@@ -12,7 +12,7 @@ Green means the front end gets the same answer.
 ## Scenario
 
 The constellation underneath is the nested one, staged exactly as its own lane
-stages it — eight processes, two master services, one mid — because the point is
+stages it — nine processes, two master services, one mid — because the point is
 that the front end reaches the same answer, not that a new topology does. The
 oracle is not restated here either: the assertions read it out of the nested
 lane's, so the two cannot drift.

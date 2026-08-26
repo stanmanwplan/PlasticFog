@@ -197,8 +197,10 @@ data id to a data resource and says how it is distributed.
 
 **A source may be carried inline in the document, and that is the preferred
 form.** An inline document is the whole artifact: one JSON file, nothing beside
-it, and no source root to stage. All ten worked goldens are all-inline, and the
-runtime executes that shape directly.
+it, and no source root to stage. Nine of the ten worked goldens are all-inline,
+and the runtime executes that shape directly. The one exception is a rule rather
+than a lapse: the nested-price golden carries its mid's own child ids as a file,
+because that name is fixed and the document-wide collection already claims it.
 
 Inline sources are named by rule, and the names are load bearing:
 

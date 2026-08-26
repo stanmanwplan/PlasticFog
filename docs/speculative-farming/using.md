@@ -39,11 +39,11 @@ number is checkable: a price-directed problem with one master and two child
 blocks, each choosing one option from its own list against one shared capacity
 row.
 
-Its optimum, **−61.0**, was derived by hand — four independent ways, including
-the full undecomposed LP through its Lagrangian dual and the Dantzig–Wolfe
-trace — *before any of this machinery existed*, and confirmed by three
-independent solvers. Its baseline round count at K = 1, **six**, was derived
-from the same trace. That is what makes it a validation fixture rather than a
+Its optimum, **−61.0**, was derived by hand — two independent ways, the full
+undecomposed LP through its Lagrangian dual and the Dantzig–Wolfe trace —
+*before any of this machinery existed*, and confirmed by three independent
+solvers. Its baseline round count at K = 1, **six**, was derived from the same
+trace. That is what makes it a validation fixture rather than a
 benchmark: the answers were known first, and the runtime is checked against
 them.
 

@@ -16,12 +16,14 @@ to: captured per-service streams exist only where the supervisor started the
 processes. The lane therefore reuses the spawn scenario's document, brings the
 constellation up through the deployment verb, and then follows.
 
-Three things are asserted. Fan-in labelling over two services: each line carries
+Four things are asserted. Fan-in labelling over two services: each line carries
 the service it came from and that service's own process identifier, so a merged
 stream stays attributable. The silent default proved silent: the display mode
 that is meant to produce no presentation produces none, which is a claim that
 can only be checked by looking, since an accidental default would be invisible in
-a passing run. And a presentation pane is killed mid-lane, after which the lane
+a passing run. `--level` filters structured records only, so banners, solver
+chatter and timing lines pass every floor rather than being dropped on a guessed
+severity. And a presentation pane is killed mid-lane, after which the lane
 must continue: following logs must not depend on a viewer staying alive, or an
 operator closing a window would take the run with it.
 

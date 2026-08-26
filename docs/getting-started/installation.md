@@ -128,13 +128,12 @@ The build produces the five service executables (`pf_App`, `pf_RegService`,
 `pf_OvrService`, `pf_RmpService`, `pf_SubService`), the resident daemon
 `pf_Conductor`, the `pf` command-line client, and `pf_CatalogTool`.
 
-!!! warning
-    The `ubuntu-cli-debug` preset hardcodes an absolute COIN-OR path in its
-    cache variables. This is a known portability defect, recorded in the
-    project's own audit findings and deliberately left out of scope of the
-    passes that would otherwise have touched it. Until it is fixed, prefer the
-    plain configure with `COIN_OR_INSTALL_DIR` exported, or override with
-    `-DCOIN_OR_ROOT` on the command line.
+!!! note
+    The preset takes the same two environment variables the plain configure
+    does, and hardcodes no path: `OpenDDS_DIR` is set from
+    `$env{OPENDDS_INSTALL_DIR}` and `COIN_OR_ROOT` from
+    `$env{COIN_OR_INSTALL_DIR}`. Overriding with `-DCOIN_OR_ROOT` on the
+    command line still works.
 
 ### Test options
 

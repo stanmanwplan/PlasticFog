@@ -19,10 +19,10 @@ to do.
 It is deliberately small — one price-directed master over two child blocks,
 each choosing one option from its own list against one shared capacity row — so
 that every quantity is checkable on paper. Its optimum, −61, was derived by hand
-four independent ways, including the full undecomposed problem through its
-Lagrangian dual and the Dantzig–Wolfe trace, and independently confirmed by
-three vendored solvers on a hand-flattened single-model version. Its baseline
-round count at K = 1, six, comes from the same trace.
+two independent ways — the full undecomposed problem through its Lagrangian dual
+and the Dantzig–Wolfe trace — and independently confirmed by three vendored
+solvers on a hand-flattened single-model version. Its baseline round count at
+K = 1, six, comes from the same trace.
 
 The instance is *shaped* rather than sampled. Its objective coefficients sum to
 exactly zero, which removes a dependence on the C library's random number

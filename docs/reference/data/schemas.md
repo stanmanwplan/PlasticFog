@@ -63,7 +63,7 @@ form of the same guard.
 | Field | Type | Meaning |
 |---|---|---|
 | `schemaVersion` | const `pf.problem_command.v1` | which contract this document is |
-| `command` | object | `id`, `problemId`, optional `baseRevision`, `verb`, `targets`, `applyToChildren` |
+| `command` | object | `id`, `problemId`, optional `baseRevision`, `verb`, `targets`, `applyToChildren`, `options` |
 
 Both are required. A command parses standalone: the problem is named by id and
 the definition is not required in the same document, so a caller holding only

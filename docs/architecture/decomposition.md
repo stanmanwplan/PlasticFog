@@ -145,10 +145,11 @@ two cannot drift apart in sign.
 
 Two conventions are worth stating because implicit ones are how sign errors
 survive. All subproblem rows are put in `>=` form: a `<=` row is negated when
-the linking system is built, and an equality is split. And a Farkas ray is
-defined only up to positive scaling, so the implementation normalises it by its
-largest absolute component — a solver returning `(2,2,2)` and one returning
-`(1,1,1)` then produce the same row.
+the linking system is built, and an equality needs no negation at all, because
+its multiplier is free in sign — which is exactly what an equality's dual is.
+And a Farkas ray is defined only up to positive scaling, so the implementation
+normalises it by its largest absolute component — a solver returning `(2,2,2)`
+and one returning `(1,1,1)` then produce the same row.
 
 The optimality cut also carries a built-in check. Evaluated at the allocation
 that produced it, it must reproduce that allocation's recourse cost. No sign
@@ -300,10 +301,11 @@ Refusals come in two kinds, and the difference matters to an author. A
 execute it, so submission refuses it before publishing anything. A **refusal
 code** means the document asks for something *unsound*, and it is rejected at
 parse or at build. Integer resource recourse, substitution on a resource child,
-downward mixing of paradigms in the direction that is not built, results scoped
-to a non-master, and a price-over-resource mid with a non-zero epigraph are
-refusal codes. A resource boundary above another resource boundary, a
-Lagrangian binding, and a subgradient binding carry notes.
+one node mastering some children price-directed and others resource-directed,
+results scoped to a non-master, and a price-over-resource mid with a non-zero
+epigraph are refusal codes. A resource boundary above a price boundary, a
+resource boundary above another resource boundary, a Lagrangian binding, and a
+subgradient binding carry notes.
 
 **Substitution is refused on a resource child because there is no local
 surrogate for a cut.** On the price path there is one: a block whose subproblem

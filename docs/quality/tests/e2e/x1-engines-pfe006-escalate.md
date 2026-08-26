@@ -29,14 +29,17 @@ hence every subsequent dual and folded cost, hence both the farm schedule and
 the draw sequence — and the escalation then changes the policy midway through.
 A predicted trace would be a table someone invented and then asserted.
 
-Four theorems are asserted, each true of every correct run. The objective is the
+Six theorems are asserted, each true of every correct run. The objective is the
 same optimum the honest lanes reach, which is the lane's most important
 assertion: a run in which a child lied whenever it had something to say reaches
 the true optimum only if the terminal invariant refuses to converge on an
 unproven uncertified claim and the certifier supplies the withheld column. At
 least one audit failure must occur, or the hook did not fire. The run must
-escalate and thereafter certify every unproven claim with no further draws. And
-every claim in the round it converged on must be proven or certified.
+escalate and thereafter certify every unproven claim with no further draws.
+Every claim in the round it converged on must be proven or certified. The
+application must still exit 0. And the run must take at most twelve rounds — a
+liveness bound rather than a schedule, twelve being the point past which the lie
+would be costing rounds without bound.
 
 ## Running
 

@@ -66,9 +66,10 @@ filed away.
 ## Placement
 
 The document does not name machines. Each service in the topology carries a
-**placement**, which is either an explicit list of service ids or a query — a
-service type, a count, required capabilities, and whether to consider only
-available services.
+**placement**, in one of four forms: an explicit list of service ids; a query —
+a service type, a count, required capabilities, a selection rule, and whether to
+consider only available services; a spawn; or an automatic choice among an
+ordered list of alternatives tried in turn.
 
 At submit, those placements are translated onto the registry's request protocol
 and resolved over DDS. The submission waits on a synchronisation gate for the
@@ -89,12 +90,14 @@ child bound to its own host, source and data.
 Two things happen at this stage that are worth calling out.
 
 **Verbs are attached by role.** A master module receives the setup and solve
-verbs; a subproblem module receives setup only. That asymmetry is the
-Dantzig–Wolfe contract, not an oversight: a subproblem that solved on arrival
-would be solving with no reduced-cost vector to solve against, would park in
-its running state, and would then reject the genuine prices when they arrived.
-The overall problem itself receives no verbs, and the builder creates no module
-for it — it is an identifier, not a participant.
+verbs; a subproblem module receives setup only. A mid's master half is the
+exception: it receives setup alone, because a mid is driven by prices on both of
+its faces. That asymmetry is the Dantzig–Wolfe contract, not an oversight: a
+subproblem that solved on arrival would be solving with no reduced-cost vector
+to solve against, would park in its running state, and would then reject the
+genuine prices when they arrived. The overall problem itself receives no verbs,
+and the builder creates no module for it — it is an identifier, not a
+participant.
 
 **Anything unexecutable is refused before publication.** The build compares
 what the document asks for against what this runtime can actually do, and a
@@ -107,9 +110,10 @@ something other than what was written.
 The application publishes the overall problem, carrying the graph, to the
 overall-problem service. That service is the fan-out point. It processes the
 graph, derives the per-node Zimpl source and configuration for each master and
-each subproblem — the master's coupling rows are stripped out of the source the
-children receive — and publishes each resulting module to the service that will
-host it.
+each subproblem — the master's coupling rows are stripped out of the source its
+*price* children receive, a resource child being handed its own source
+unprefaced — and publishes each resulting module to the service that will host
+it.
 
 Distribution is hierarchy-aware rather than flat. Before publishing anything,
 the service recovers the tree from edges already in the graph and from the

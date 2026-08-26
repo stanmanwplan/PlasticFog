@@ -18,7 +18,7 @@ the problem's identifier and its description. So anything this lane sees and the
 plain nested lane does not is attributable to per-master return and to nothing
 else: the lane compares two documents, not two code paths.
 
-Everything else is held constant: the same eight-process constellation, the same
+Everything else is held constant: the same nine-process constellation, the same
 models, the same service identifiers, and the same oracle. The overall answer
 must come back unchanged at 5.0, which is what makes the added envelope an
 addition rather than a change.

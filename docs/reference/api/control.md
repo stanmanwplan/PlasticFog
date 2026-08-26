@@ -158,9 +158,10 @@ non-empty list can make."
 | logs | `logs.tail` |
 | the prompt pack | `promptpack.build` |
 
-`run.submit` is the streaming verb: it emits a `submitting` event naming the run
-and the document before the child process is started, and terminates with a
-reply carrying both `data` and `done: true`.
+Four verbs stream events before their reply — `run.submit`, `deploy.start`,
+`campaign.start` and `results.follow`. `run.submit` emits a `submitting` event
+naming the run and the document before the child process is started, and
+terminates with a reply carrying both `data` and `done: true`.
 
 The capabilities document is described as "sourced, not stated" — it is built
 from the current refusal state, "so the document is a map of the ratchet and not

@@ -144,7 +144,7 @@ differ from the row it was copied from.
 
 Because a transition is keyed on machine, from-state and trigger, reusing
 states makes one property load-bearing: no appended row may name a trigger that
-already has a row out of that state on that machine. Every one of the ten
+already has a row out of that state on that machine. Every one of the nine
 triggers is new — `ev_generated_allocation`, `ev_allocation_published`,
 `ev_allocation_published_failed`, `ev_resource_responses_received`,
 `ev_resource_response_timeout` on the master side, and

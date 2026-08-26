@@ -11,8 +11,8 @@ demonstrates nesting actually runs.
 
 ## Scenario
 
-The constellation's shape differs from every flat lane, not just its data. Eight
-processes rather than seven: two master services instead of one, three
+The constellation's shape differs from every flat lane, not just its data. Nine
+processes rather than eight: two master services instead of one, three
 subproblem services under two different masters, and one service holding both
 halves of the mid, because the two halves share a single inner model. Staging,
 launch order and assertions all differ for that reason, which is why this is its

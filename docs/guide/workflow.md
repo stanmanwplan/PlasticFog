@@ -26,10 +26,12 @@ to find out what the compiler has to say.
 ## Author
 
 What you write is one JSON document, `pf.problem_definition.v1`, called a
-**problem definition**. It declares four things: the identity of the problem,
+**problem definition**. It declares four things — the identity of the problem,
 the models and data it reads, the topology that carries the decomposition, and
-the execution policy. [Problem definitions](problem-definitions.md) is the tour
-of the document; [Zimpl reference](zimpl.md) covers the model side.
+the execution policy — beside its `schemaVersion` and three optional blocks,
+`runSpec`, `observability` and `catalog`.
+[Problem definitions](problem-definitions.md) is the tour of the document;
+[Zimpl reference](zimpl.md) covers the model side.
 
 There are three routes to a first draft and they end at the same document.
 

@@ -175,7 +175,7 @@ The guard found drift on its first run. Appending a newly proven row to the
 tracked file left the compiled table one row behind, and the next run of the test
 said so: `tracked 10, compiled 9`. Both now carry the row.
 
-Three lanes seed no row, and the file says why rather than leaving the absence to
+Four lanes seed no row, and the file says why rather than leaving the absence to
 be noticed: two legacy demo lanes and the CLI-backend repeat of one of them
 submit no document at all, and the reuse lane republishes an already-published
 graph. One further row is deliberately absent even though the combination is

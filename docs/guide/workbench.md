@@ -80,12 +80,12 @@ is not configured for something.
 
     $ pf capabilities
 
-The capability document is **sourced, not stated**: it is produced from the live
-runtime registry rather than kept by hand. It lists each engine with whether it
-is executable, the placement modes, the run-spec modes and the solver kinds,
-each split into what is executable and what is refused. It is the authority on
-what this build runs; where a table in this documentation and the snapshot
-disagree, read the snapshot.
+The capability document is **sourced, not stated**: it is produced from the
+build's own codec and solver-engine registry rather than kept by hand. It lists
+each engine with whether it is executable, the placement modes, the run-spec
+modes and the solver kinds, each split into what is executable and what is
+refused. It is the authority on what this build runs; where a table in this
+documentation and the snapshot disagree, read the snapshot.
 
 `--json` emits the same document machine-readably. That form is the one the
 prompt pack carries, byte for byte.
@@ -325,10 +325,11 @@ says how they should be presented.
 
 Without `--out`, the pack goes to standard output and the report to standard
 error, so a caller that pipes the pack somewhere gets the pack and nothing else.
-The capability snapshot is regenerated from the live registry before assembly,
-so a pack can never carry a capability statement older than the build that
-answers for it. [Authoring with an LLM](llm-authoring.md) covers what the pack
-contains and how it is used.
+The capability snapshot is regenerated from the build's own codec and
+solver-engine registry before assembly, so a pack can never carry a capability
+statement older than the build that answers for it.
+[Authoring with an LLM](llm-authoring.md) covers what the pack contains and how
+it is used.
 
 ## Errors
 

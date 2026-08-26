@@ -13,7 +13,7 @@ purely price-directed instance of the same size.
 
 The lane deliberately reuses the nested harness rather than getting its own, and
 that reuse is the point. It stands up the identical constellation the nested
-lane stages — eight processes, two master services, three subproblem services,
+lane stages — nine processes, two master services, three subproblem services,
 the same explicit service identifiers, one mid in the middle — and the only
 thing that differs is which paradigm the mid drives downward. That is exactly
 the fact the composition invariant says nobody above the mid should have to care

@@ -31,7 +31,7 @@ algorithm itself.** In Plasmo, the graph describes the problem and the solution
 algorithm comes from the solvers attached to it. In PlasticFog, the distributed
 contract *is* the algorithm: pricing exchanges, cut exchanges, control,
 placement and certification are the protocol that long-lived services speak to
-one another. Nesting Dantzig–Wolfe inside Benders, running heterogeneous
+one another. Nesting Benders inside Dantzig–Wolfe, running heterogeneous
 engines across the blocks of one problem, and carrying a proof token on a
 pricing reply are properties of that protocol, not of a model object.
 

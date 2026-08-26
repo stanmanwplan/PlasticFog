@@ -378,6 +378,7 @@ first, so a document it refuses never reaches the reviewer.
 | `coupling.*` | codec, two from the reviewer | the declaration | who owns what crosses: duplicate keys, ownership outside the boundary, unserializable symbols, and (reviewer) symbols that resolve on neither compiled side |
 | `placement.*` | codec, one from the reviewer | the placement block | empty or nested `auto` lists; and the deep gate's requirement that placements be explicit |
 | `run_spec.*` | codec | `/runSpec/...` | count and interval, each required by its mode and refused beside any other |
+| `update.*` | codec, patch mode only | `/payload`, `/update/...`, or the node at fault | the payload's shape against `update.mode`; the `baseRevision` compare-and-swap guard and the runtime-summary match; the four changes refused against a running solve, and the note that records an `interrupt: always` waiver |
 | `solver.*` | codec | the solver block | engine/role legality, guarantee fallbacks, ray capability, farm legality, certification sampling |
 | `problem.*`, `results.*`, `catalog.*` | codec | the field named | integer recourse engines; `returnScopes` entries that name no node or no master; a catalog id that is not a stable id |
 | `zimpl.*` | codec, then reviewer | the model source | first the marker and include rules the codec checks without compiling; then staging and compile failures, whose `cause=` token is the repair |

@@ -49,7 +49,8 @@ A **problem definition** is one JSON document conforming to
 description and metadata), `resources` (the Zimpl models and the data they
 read), `topology` (the nodes, their services and solver engines, and the
 boundaries between them), and `execution` (limits, tolerances and what results
-come back).
+come back). The document also carries its `schemaVersion`, and three optional
+blocks may sit beside the four — `runSpec`, `observability` and `catalog`.
 
 The part that matters most is the one that is easiest to underestimate. A
 definition is not a model file with a wrapper around it. Your Zimpl says what

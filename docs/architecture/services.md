@@ -193,10 +193,11 @@ to decide could not be run twice with the same answer. A refused plan is
 returned as an error carrying the plan, rather than as a success carrying an
 error list a caller might not read.
 
-The plan's action kinds come straight from the placement modes the document
-already spells: an explicit placement becomes an attach, a query becomes a
-discovery, a spawn becomes a spawn, and an automatic placement becomes whichever
-arm wins. A fifth kind would be a concept the document cannot express.
+The plan has three action kinds, and they come straight from the four placement
+modes the document already spells: an explicit placement becomes an attach, a
+query becomes a discovery, a spawn becomes a spawn, and an automatic placement
+becomes whichever arm wins. A fifth mode would be a concept the document cannot
+express.
 
 `pf deploy start` hands the plan to a supervisor that starts and owns the
 processes in dependency order — registration service, overall-problem service,

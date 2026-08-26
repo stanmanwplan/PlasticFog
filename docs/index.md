@@ -108,7 +108,7 @@ hierarchy stays comprehensible as it deepens. Second, placement is a runtime
 question rather than a build-time one. A problem definition names service
 types, counts and capabilities; the runtime resolves those against a live
 registry, refuses what it cannot execute, and distributes what it can.
-Solver engines are selected per boundary, and a request for an engine a host
+Solver engines are selected per service binding, and a request for an engine a host
 cannot actually run is refused with a stated reason rather than silently
 downgraded.
 

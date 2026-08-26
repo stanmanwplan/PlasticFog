@@ -54,13 +54,13 @@ would be asking for a claim, and a claim is exactly what a validator exists to
 replace.
 
 **Never invent a capability absent from the snapshot.** The capability snapshot
-is regenerated from the live registry every time the pack is built, so it can
-never be older than the build that answers for it, and it is the complete list
-of what this build executes. A model asked for something it does not carry
-answers `unsupported`, naming the capability and quoting the field it checked —
-rather than producing a document that validates and is refused at submit, a
-round trip through the whole system to learn something the snapshot said up
-front.
+is regenerated from the build's own codec and solver-engine registry every time
+the pack is built, so it can never be older than the build that answers for it,
+and it is the complete list of what this build executes. A model asked for
+something it does not carry answers `unsupported`, naming the capability and
+quoting the field it checked — rather than producing a document that validates
+and is refused at submit, a round trip through the whole system to learn
+something the snapshot said up front.
 
 The core also carries a **clarification policy** rather than a ban on asking:
 named categories where a question is legitimate, a cap on how many questions one
