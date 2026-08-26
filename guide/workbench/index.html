@@ -4676,12 +4676,12 @@ is not configured for something.</p>
 <h3 id="pf-capabilities"><code>pf capabilities</code><a class="headerlink" href="#pf-capabilities" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ pf capabilities
 </code></pre></div>
-<p>The capability document is <strong>sourced, not stated</strong>: it is produced from the live
-runtime registry rather than kept by hand. It lists each engine with whether it
-is executable, the placement modes, the run-spec modes and the solver kinds,
-each split into what is executable and what is refused. It is the authority on
-what this build runs; where a table in this documentation and the snapshot
-disagree, read the snapshot.</p>
+<p>The capability document is <strong>sourced, not stated</strong>: it is produced from the
+build's own codec and solver-engine registry rather than kept by hand. It lists
+each engine with whether it is executable, the placement modes, the run-spec
+modes and the solver kinds, each split into what is executable and what is
+refused. It is the authority on what this build runs; where a table in this
+documentation and the snapshot disagree, read the snapshot.</p>
 <p><code>--json</code> emits the same document machine-readably. That form is the one the
 prompt pack carries, byte for byte.</p>
 <h3 id="pf-spec-import"><code>pf spec import</code><a class="headerlink" href="#pf-spec-import" title="Permanent link">&para;</a></h3>
@@ -4885,10 +4885,11 @@ prompt pack  mode natural_language  packVersion 1.0.0
 </code></pre></div>
 <p>Without <code>--out</code>, the pack goes to standard output and the report to standard
 error, so a caller that pipes the pack somewhere gets the pack and nothing else.
-The capability snapshot is regenerated from the live registry before assembly,
-so a pack can never carry a capability statement older than the build that
-answers for it. <a href="../llm-authoring/">Authoring with an LLM</a> covers what the pack
-contains and how it is used.</p>
+The capability snapshot is regenerated from the build's own codec and
+solver-engine registry before assembly, so a pack can never carry a capability
+statement older than the build that answers for it.
+<a href="../llm-authoring/">Authoring with an LLM</a> covers what the pack contains and how
+it is used.</p>
 <h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
 <p>A verb that fails answers with a code from a closed vocabulary rather than
 prose: <code>unknown_verb</code>, <code>version_mismatch</code>, <code>bad_request</code>, <code>not_found</code>,

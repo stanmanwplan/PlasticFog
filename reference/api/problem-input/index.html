@@ -5387,6 +5387,12 @@ first, so a document it refuses never reaches the reviewer.</p>
 <td>count and interval, each required by its mode and refused beside any other</td>
 </tr>
 <tr>
+<td><code>update.*</code></td>
+<td>codec, patch mode only</td>
+<td><code>/payload</code>, <code>/update/...</code>, or the node at fault</td>
+<td>the payload's shape against <code>update.mode</code>; the <code>baseRevision</code> compare-and-swap guard and the runtime-summary match; the four changes refused against a running solve, and the note that records an <code>interrupt: always</code> waiver</td>
+</tr>
+<tr>
 <td><code>solver.*</code></td>
 <td>codec</td>
 <td>the solver block</td>

@@ -4590,10 +4590,11 @@ epigraph column. They are implemented as one core with a flag precisely so the
 two cannot drift apart in sign.</p>
 <p>Two conventions are worth stating because implicit ones are how sign errors
 survive. All subproblem rows are put in <code>&gt;=</code> form: a <code>&lt;=</code> row is negated when
-the linking system is built, and an equality is split. And a Farkas ray is
-defined only up to positive scaling, so the implementation normalises it by its
-largest absolute component — a solver returning <code>(2,2,2)</code> and one returning
-<code>(1,1,1)</code> then produce the same row.</p>
+the linking system is built, and an equality needs no negation at all, because
+its multiplier is free in sign — which is exactly what an equality's dual is.
+And a Farkas ray is defined only up to positive scaling, so the implementation
+normalises it by its largest absolute component — a solver returning <code>(2,2,2)</code>
+and one returning <code>(1,1,1)</code> then produce the same row.</p>
 <p>The optimality cut also carries a built-in check. Evaluated at the allocation
 that produced it, it must reproduce that allocation's recourse cost. No sign
 error survives that identity, and it is asserted as a test rather than assumed.</p>
@@ -4741,10 +4742,11 @@ against an independently derived optimum:</p>
 execute it, so submission refuses it before publishing anything. A <strong>refusal
 code</strong> means the document asks for something <em>unsound</em>, and it is rejected at
 parse or at build. Integer resource recourse, substitution on a resource child,
-downward mixing of paradigms in the direction that is not built, results scoped
-to a non-master, and a price-over-resource mid with a non-zero epigraph are
-refusal codes. A resource boundary above another resource boundary, a
-Lagrangian binding, and a subgradient binding carry notes.</p>
+one node mastering some children price-directed and others resource-directed,
+results scoped to a non-master, and a price-over-resource mid with a non-zero
+epigraph are refusal codes. A resource boundary above a price boundary, a
+resource boundary above another resource boundary, a Lagrangian binding, and a
+subgradient binding carry notes.</p>
 <p><strong>Substitution is refused on a resource child because there is no local
 surrogate for a cut.</strong> On the price path there is one: a block whose subproblem
 does not answer can be priced by DIP's own fallback, which is a fair

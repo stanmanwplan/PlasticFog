@@ -4888,9 +4888,10 @@ non-empty list can make."</p>
 </tr>
 </tbody>
 </table>
-<p><code>run.submit</code> is the streaming verb: it emits a <code>submitting</code> event naming the run
-and the document before the child process is started, and terminates with a
-reply carrying both <code>data</code> and <code>done: true</code>.</p>
+<p>Four verbs stream events before their reply — <code>run.submit</code>, <code>deploy.start</code>,
+<code>campaign.start</code> and <code>results.follow</code>. <code>run.submit</code> emits a <code>submitting</code> event
+naming the run and the document before the child process is started, and
+terminates with a reply carrying both <code>data</code> and <code>done: true</code>.</p>
 <p>The capabilities document is described as "sourced, not stated" — it is built
 from the current refusal state, "so the document is a map of the ratchet and not
 just a feature list" — and it is deterministic: "the same bytes on every

@@ -4333,7 +4333,7 @@ the reason is worth knowing.</p>
 <td><a href="unit/conductor-supervisor/">pf_Conductor_Supervisor_Tests</a></td>
 <td><code>tests/unit/pf_Conductor_Supervisor_Tests.cpp</code></td>
 <td><code>pf_Conductor_Supervisor</code>, <code>pf_Conductor_Supervisor_Probe</code></td>
-<td><code>unit;integration;public</code></td>
+<td><code>unit;integration;public</code>, <code>integration;public</code> respectively</td>
 <td>The deployment supervisor: start order, process identity, drain, census. Registered twice, once per half.</td>
 </tr>
 <tr>
@@ -4593,7 +4593,7 @@ the reason is worth knowing.</p>
 <td><code>L5</code></td>
 <td><code>tests/e2e/run_scenario.sh --scenario pf002 --degrade sub2 --degrade-mode pre-solve</code></td>
 <td>—</td>
-<td>A subproblem killed after its first real reply — degradation recorded rather than absorbed.</td>
+<td>A subproblem killed as soon as it has registered, before the solve, so it answers nothing at all — degradation recorded rather than absorbed.</td>
 </tr>
 <tr>
 <td><a href="e2e/l6-scenario-pf002-omit-sub2/">l6-scenario-pf002-omit-sub2</a></td>

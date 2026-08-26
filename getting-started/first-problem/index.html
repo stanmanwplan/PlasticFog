@@ -4418,7 +4418,8 @@ difference and what nests inside what.</p>
 description and metadata), <code>resources</code> (the Zimpl models and the data they
 read), <code>topology</code> (the nodes, their services and solver engines, and the
 boundaries between them), and <code>execution</code> (limits, tolerances and what results
-come back).</p>
+come back). The document also carries its <code>schemaVersion</code>, and three optional
+blocks may sit beside the four — <code>runSpec</code>, <code>observability</code> and <code>catalog</code>.</p>
 <p>The part that matters most is the one that is easiest to underestimate. A
 definition is not a model file with a wrapper around it. Your Zimpl says what
 the arithmetic is; the topology says how the problem is cut apart — which rows

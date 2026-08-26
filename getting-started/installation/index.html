@@ -4502,14 +4502,13 @@ cmake<span class="w"> </span>--build<span class="w"> </span>build<span class="w"
 <p>The build produces the five service executables (<code>pf_App</code>, <code>pf_RegService</code>,
 <code>pf_OvrService</code>, <code>pf_RmpService</code>, <code>pf_SubService</code>), the resident daemon
 <code>pf_Conductor</code>, the <code>pf</code> command-line client, and <code>pf_CatalogTool</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The <code>ubuntu-cli-debug</code> preset hardcodes an absolute COIN-OR path in its
-cache variables. This is a known portability defect, recorded in the
-project's own audit findings and deliberately left out of scope of the
-passes that would otherwise have touched it. Until it is fixed, prefer the
-plain configure with <code>COIN_OR_INSTALL_DIR</code> exported, or override with
-<code>-DCOIN_OR_ROOT</code> on the command line.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The preset takes the same two environment variables the plain configure
+does, and hardcodes no path: <code>OpenDDS_DIR</code> is set from
+<code>$env{OPENDDS_INSTALL_DIR}</code> and <code>COIN_OR_ROOT</code> from
+<code>$env{COIN_OR_INSTALL_DIR}</code>. Overriding with <code>-DCOIN_OR_ROOT</code> on the
+command line still works.</p>
 </div>
 <h3 id="test-options">Test options<a class="headerlink" href="#test-options" title="Permanent link">&para;</a></h3>
 <p>Every test group is behind a CMake option that defaults to <code>OFF</code>, so an

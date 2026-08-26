@@ -4453,9 +4453,10 @@ the real binary on a dry run, not a status recorded when the document was first
 filed away.</p>
 <h2 id="placement">Placement<a class="headerlink" href="#placement" title="Permanent link">&para;</a></h2>
 <p>The document does not name machines. Each service in the topology carries a
-<strong>placement</strong>, which is either an explicit list of service ids or a query — a
-service type, a count, required capabilities, and whether to consider only
-available services.</p>
+<strong>placement</strong>, in one of four forms: an explicit list of service ids; a query —
+a service type, a count, required capabilities, a selection rule, and whether to
+consider only available services; a spawn; or an automatic choice among an
+ordered list of alternatives tried in turn.</p>
 <p>At submit, those placements are translated onto the registry's request protocol
 and resolved over DDS. The submission waits on a synchronisation gate for the
 registry's answers, and the wait is bounded. Two failures that look alike from
@@ -4471,12 +4472,14 @@ host and to its Zimpl source and data collections, one subproblem module per
 child bound to its own host, source and data.</p>
 <p>Two things happen at this stage that are worth calling out.</p>
 <p><strong>Verbs are attached by role.</strong> A master module receives the setup and solve
-verbs; a subproblem module receives setup only. That asymmetry is the
-Dantzig–Wolfe contract, not an oversight: a subproblem that solved on arrival
-would be solving with no reduced-cost vector to solve against, would park in
-its running state, and would then reject the genuine prices when they arrived.
-The overall problem itself receives no verbs, and the builder creates no module
-for it — it is an identifier, not a participant.</p>
+verbs; a subproblem module receives setup only. A mid's master half is the
+exception: it receives setup alone, because a mid is driven by prices on both of
+its faces. That asymmetry is the Dantzig–Wolfe contract, not an oversight: a
+subproblem that solved on arrival would be solving with no reduced-cost vector
+to solve against, would park in its running state, and would then reject the
+genuine prices when they arrived. The overall problem itself receives no verbs,
+and the builder creates no module for it — it is an identifier, not a
+participant.</p>
 <p><strong>Anything unexecutable is refused before publication.</strong> The build compares
 what the document asks for against what this runtime can actually do, and a
 shape it cannot execute is refused with a named code pointing at the offending
@@ -4486,9 +4489,10 @@ something other than what was written.</p>
 <p>The application publishes the overall problem, carrying the graph, to the
 overall-problem service. That service is the fan-out point. It processes the
 graph, derives the per-node Zimpl source and configuration for each master and
-each subproblem — the master's coupling rows are stripped out of the source the
-children receive — and publishes each resulting module to the service that will
-host it.</p>
+each subproblem — the master's coupling rows are stripped out of the source its
+<em>price</em> children receive, a resource child being handed its own source
+unprefaced — and publishes each resulting module to the service that will host
+it.</p>
 <p>Distribution is hierarchy-aware rather than flat. Before publishing anything,
 the service recovers the tree from edges already in the graph and from the
 attributes the builder stamped on it, resolving every master's hosting service

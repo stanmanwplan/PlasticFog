@@ -4378,10 +4378,12 @@ failure never arrive in the same report. Repair the codec refusal and run again
 to find out what the compiler has to say.</p>
 <h2 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
 <p>What you write is one JSON document, <code>pf.problem_definition.v1</code>, called a
-<strong>problem definition</strong>. It declares four things: the identity of the problem,
+<strong>problem definition</strong>. It declares four things — the identity of the problem,
 the models and data it reads, the topology that carries the decomposition, and
-the execution policy. <a href="../problem-definitions/">Problem definitions</a> is the tour
-of the document; <a href="../zimpl/">Zimpl reference</a> covers the model side.</p>
+the execution policy — beside its <code>schemaVersion</code> and three optional blocks,
+<code>runSpec</code>, <code>observability</code> and <code>catalog</code>.
+<a href="../problem-definitions/">Problem definitions</a> is the tour of the document;
+<a href="../zimpl/">Zimpl reference</a> covers the model side.</p>
 <p>There are three routes to a first draft and they end at the same document.</p>
 <p><strong>By hand, from the corpus.</strong> <code>promptpack/examples/</code> holds ten worked triples —
 a request, a response envelope and the document it carries — one per input shape
