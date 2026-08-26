@@ -4291,12 +4291,12 @@ optimization. It supports:</p>
   can include changes to: a) the physical and logical decomposition topology,
   b) the mathematical logic at the nodes, c) the solver selections per node, and 
   d) the decomposition
-  methods. Updates are applied per sub-hierarchy: changes to mathematical logic and data can be applied even while the targeted sub-hierarchy is running — affected nodes recompile the model in memory and re-enter at safe points in their iteration cycles — while changes to topology, solvers, or methods are applied between that sub-hierarchy's solves. In every case the wider problem can continue to run. 
+  methods. Updates are applied per sub-hierarchy. Changes to mathematical logic and data can be applied even while the targeted sub-hierarchy is running — affected nodes recompile the model in memory and re-enter at safe points in their iteration cycles — while changes to topology, solvers, or methods are applied between that sub-hierarchy's solves. In every case the wider problem can continue to run. 
   This feature supports spot updates where, for example, two factory
   cell controller sub-hierarchies could be modified as a mobile robot subproblem
   moves from one cell to the other, while the overall factory optimization
   process runs continuously. Note that processing at any master or mid-master node (within
-  the nested hierarchy) can be stopped, paused, and resumed. A paused child is
+  the nested hierarchy) can be stopped, paused, and resumed independently. A paused child is
   resolved by its parent's failure policy rather than waited out.
   Where the parent's policy tolerates the pause, a paused sub-hierarchy's mathematical logic and data can be updated in place and the sub-hierarchy resumed on the updated definition, while the wider problem continues to run. End-to-end testing of this composed sequence is still underway in this pre-release.</li>
 <li><strong>Speculative farming with cuOpt.</strong> This is an innovative widely-distributed
@@ -4316,17 +4316,15 @@ optimization. It supports:</p>
   PlasticFog platform is written entirely in C++17. One goal is to provide a
   pathway for research projects to be immediately deployed into real-world
   solutions.</li>
-<li><strong>Prompt packs enabling LLM generation of widely-distributable problem
+<li><strong>Prompt packs enabling LLM generation of widely-distributed problem
   definitions.</strong> A model-neutral prompt pack turns a description of a problem
   into a schema-valid problem definition. One pack is provided per input mode:
-  prose, a written mathematical formulation, a model in an algebraic modelling
-  language such as AMPL, GAMS, or Zimpl,
-  or a patch to a definition already submitted (known as a
+  prose, a written mathematical formulation, a model in another algebraic modelling language such as AMPL or GAMS, a flat Zimpl model you already run under one solver, or a patch to a definition already submitted (known as a
   spot update). A request may carry an explicit decomposition or a hint at how
   the decomposition structure should be constructed. The prompt pack checks any
   hint rather than simply obeying it. All input formulations are converted to
   PlasticFog's internal customized Zimpl format which encodes widely-distributed nested 
-  decomposed problems. This technology does not claim to robustly
+  decomposed problems in a manner that can be rapidly processed. This technology does not claim to robustly
   discover decomposition structures within models written to be solved whole,
   but rather records them as assumptions. This could be a potential area for
   research, however. <a href="guide/llm-authoring/">Authoring with an LLM</a> describes
@@ -4350,14 +4348,14 @@ optimization. It supports:</p>
   it is expected that this will work properly, although thorough testing of this
   capability is still underway in this pre-release.</li>
 <li><strong>Parallel subproblems</strong> are supported via a small update to COIN-OR DIP.
-  Although DIP currently provides a thread-based mechanism for handling local
+  Although DIP currently provides an optional thread-based mechanism for handling local
   parallelization of subproblems, this approach isn't appropriate for
   PlasticFog. A complementary (and fully atomic) additional API call enables
-  PlasticFog to retrieve the entire vector for all subproblems in one batch per
+  PlasticFog to retrieve the entire reduced costs vector for all subproblems in one batch per
   iteration. PlasticFog handles all of the parallelization, and returns the
   results as a batch. Note that a subset of subproblems could potentially be
   solved locally by DIP using the thread-based parallelization approach, while
-  PlasticFog solves the remaining subproblems remotely via its own
+  PlasticFog solves a disjoint set of subproblems remotely via its own
   parallelization approach.</li>
 </ul>
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>

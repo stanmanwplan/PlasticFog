@@ -782,6 +782,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#one-bound-two-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One bound, two representations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#price-directed-dantzigwolfe" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4312,6 +4323,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#one-bound-two-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One bound, two representations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#price-directed-dantzigwolfe" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4499,6 +4521,26 @@ only behind a parameter the service never sets, and DIP's remaining variants are
 never constructed. <strong>SYMPHONY</strong>, <strong>CBC</strong>, <strong>CLP</strong>, <strong>HiGHS</strong> and <strong>NVIDIA
 cuOpt</strong> are engines — they solve the LPs and MIPs a decomposition poses at a
 master or at a block, and none of them performs any decomposition itself.</p>
+<h2 id="one-bound-two-representations">One bound, two representations<a class="headerlink" href="#one-bound-two-representations" title="Permanent link">&para;</a></h2>
+<p>Price-directed methods in DIP share a single underlying object. Splitting the
+constraints into a tractable relaxation and a set of complicating rows defines
+the convex hull of the relaxation's integer points; the improved bound every
+method below computes is the optimum over that hull intersected with the
+complicating rows. What varies is how the hull is represented.</p>
+<p>Inner methods build it from the inside, as convex combinations of extreme
+points the subproblem oracle proposes — Dantzig–Wolfe column generation is the
+primal form and Lagrangian relaxation its dual. Outer methods build it from the
+outside, as an accumulation of valid inequalities, using the same oracle to
+separate: a point that cannot be expressed as a convex combination of the
+hull's points yields a certificate, and the certificate is a cut.</p>
+<p>The two arrive at the same bound, and the hybrids run both at once — which is
+what the names in DIP mean. Price-and-cut adds outer cuts to the inner master;
+relax-and-cut adds them to the Lagrangian; the pure cutting-plane method is the
+outer method alone. PlasticFog's shipped price-directed path is DIP's
+price-and-cut; the outer-only realization exists in DIP and is not reachable
+through a problem definition today.</p>
+<p>None of this is Benders: the outer method here works the same structural split
+as column generation, while Benders decomposes along a different one.</p>
 <h2 id="price-directed-dantzigwolfe">Price-directed: Dantzig–Wolfe<a class="headerlink" href="#price-directed-dantzigwolfe" title="Permanent link">&para;</a></h2>
 <p><code>paradigm: price_directed</code>, <code>binding: dantzig_wolfe</code> — the two fields a
 <a href="../../guide/problem-definitions/">problem definition</a> sets on a boundary to ask
